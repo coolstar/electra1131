@@ -22,6 +22,7 @@
 		F13A09E720C8603500DC838E /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09E620C8603500DC838E /* kutils.c */; };
 		F13A09EE20C8653E00DC838E /* multi_path_additions.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09EC20C8653E00DC838E /* multi_path_additions.c */; };
 		F13A09F120C8665800DC838E /* offsetof.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09EF20C8665800DC838E /* offsetof.c */; };
+		F1E5C2C820C879A600438426 /* remap_tfp_set_hsp.c in Sources */ = {isa = PBXBuildFile; fileRef = F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		F13A09ED20C8653E00DC838E /* multi_path_additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multi_path_additions.h; sourceTree = "<group>"; };
 		F13A09EF20C8665800DC838E /* offsetof.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = offsetof.c; sourceTree = "<group>"; };
 		F13A09F020C8665800DC838E /* offsetof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsetof.h; sourceTree = "<group>"; };
+		F1E5C2C620C879A600438426 /* remap_tfp_set_hsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remap_tfp_set_hsp.h; sourceTree = "<group>"; };
+		F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remap_tfp_set_hsp.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				F13A09E420C8602D00DC838E /* utilities */,
 				F13A09E120C85EFA00DC838E /* electra.c */,
 				F13A09E220C85EFA00DC838E /* electra.h */,
+				F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */,
+				F1E5C2C620C879A600438426 /* remap_tfp_set_hsp.h */,
 				F13A09DE20C85E9A00DC838E /* patchfinder64.c */,
 				F13A09DF20C85E9A00DC838E /* patchfinder64.h */,
 			);
@@ -244,6 +249,7 @@
 				F13A09EE20C8653E00DC838E /* multi_path_additions.c in Sources */,
 				B060B7DF20BC0624001FD0CE /* AppDelegate.m in Sources */,
 				F13A09F120C8665800DC838E /* offsetof.c in Sources */,
+				F1E5C2C820C879A600438426 /* remap_tfp_set_hsp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
