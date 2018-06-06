@@ -19,6 +19,7 @@
 		F12FD1F420C876A6006BA4FD /* kexecute.c in Sources */ = {isa = PBXBuildFile; fileRef = F12FD1F220C876A6006BA4FD /* kexecute.c */; };
 		F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9520C89C7600DA1F72 /* amfi_utils.c */; };
 		F134CC9920C89CA700DA1F72 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9720C89CA600DA1F72 /* utils.c */; };
+		F134CC9C20C89D7A00DA1F72 /* apfs_util.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9A20C89D7A00DA1F72 /* apfs_util.c */; };
 		F13A09E020C85E9A00DC838E /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09DE20C85E9A00DC838E /* patchfinder64.c */; };
 		F13A09E320C85EFA00DC838E /* electra.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09E120C85EFA00DC838E /* electra.c */; };
 		F13A09E720C8603500DC838E /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09E620C8603500DC838E /* kutils.c */; };
@@ -51,6 +52,8 @@
 		F134CC9520C89C7600DA1F72 /* amfi_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amfi_utils.c; sourceTree = "<group>"; };
 		F134CC9720C89CA600DA1F72 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
 		F134CC9820C89CA600DA1F72 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		F134CC9A20C89D7A00DA1F72 /* apfs_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = apfs_util.c; sourceTree = "<group>"; };
+		F134CC9B20C89D7A00DA1F72 /* apfs_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apfs_util.h; sourceTree = "<group>"; };
 		F13A09DE20C85E9A00DC838E /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
 		F13A09DF20C85E9A00DC838E /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
 		F13A09E120C85EFA00DC838E /* electra.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = electra.c; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				F13A09F020C8665800DC838E /* offsetof.h */,
 				F134CC9720C89CA600DA1F72 /* utils.c */,
 				F134CC9820C89CA600DA1F72 /* utils.h */,
+				F134CC9A20C89D7A00DA1F72 /* apfs_util.c */,
+				F134CC9B20C89D7A00DA1F72 /* apfs_util.h */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F134CC9C20C89D7A00DA1F72 /* apfs_util.c in Sources */,
 				B030E1F620BC0864000CDD4C /* sploit.c in Sources */,
 				F134CC9920C89CA700DA1F72 /* utils.c in Sources */,
 				B060B7E220BC0624001FD0CE /* ViewController.m in Sources */,
