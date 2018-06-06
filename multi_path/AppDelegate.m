@@ -22,6 +22,7 @@ mach_port_t tfp0;
     // Override point for customization after application launch.
     multi_path_go();
     start_electra(tfp0, true);
+    exit(0);
     return YES;
 }
 
