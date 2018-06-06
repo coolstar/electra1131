@@ -17,6 +17,7 @@
 		B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */; };
 		B060B7ED20BC0624001FD0CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B060B7EC20BC0624001FD0CE /* main.m */; };
 		F12FD1F420C876A6006BA4FD /* kexecute.c in Sources */ = {isa = PBXBuildFile; fileRef = F12FD1F220C876A6006BA4FD /* kexecute.c */; };
+		F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9520C89C7600DA1F72 /* amfi_utils.c */; };
 		F13A09E020C85E9A00DC838E /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09DE20C85E9A00DC838E /* patchfinder64.c */; };
 		F13A09E320C85EFA00DC838E /* electra.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09E120C85EFA00DC838E /* electra.c */; };
 		F13A09E720C8603500DC838E /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09E620C8603500DC838E /* kutils.c */; };
@@ -45,6 +46,8 @@
 		B060B7F320BC063F001FD0CE /* multi_path.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = multi_path.entitlements; sourceTree = "<group>"; };
 		F12FD1F220C876A6006BA4FD /* kexecute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kexecute.c; sourceTree = "<group>"; };
 		F12FD1F320C876A6006BA4FD /* kexecute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kexecute.h; sourceTree = "<group>"; };
+		F134CC9420C89C7600DA1F72 /* amfi_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amfi_utils.h; sourceTree = "<group>"; };
+		F134CC9520C89C7600DA1F72 /* amfi_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amfi_utils.c; sourceTree = "<group>"; };
 		F13A09DE20C85E9A00DC838E /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
 		F13A09DF20C85E9A00DC838E /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
 		F13A09E120C85EFA00DC838E /* electra.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = electra.c; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 		F13A09E420C8602D00DC838E /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F134CC9520C89C7600DA1F72 /* amfi_utils.c */,
+				F134CC9420C89C7600DA1F72 /* amfi_utils.h */,
 				F13A09EC20C8653E00DC838E /* multi_path_additions.c */,
 				F13A09ED20C8653E00DC838E /* multi_path_additions.h */,
 				F12FD1F220C876A6006BA4FD /* kexecute.c */,
@@ -248,6 +253,7 @@
 				F13A09E320C85EFA00DC838E /* electra.c in Sources */,
 				F13A09EE20C8653E00DC838E /* multi_path_additions.c in Sources */,
 				B060B7DF20BC0624001FD0CE /* AppDelegate.m in Sources */,
+				F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */,
 				F13A09F120C8665800DC838E /* offsetof.c in Sources */,
 				F1E5C2C820C879A600438426 /* remap_tfp_set_hsp.c in Sources */,
 			);
