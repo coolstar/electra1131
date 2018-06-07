@@ -20,8 +20,8 @@ mach_port_t tfp0;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    multi_path_go();
-    start_electra(tfp0, true);
+    if (multi_path_go() == KERN_SUCCESS)
+        start_electra(tfp0, true);
     exit(0);
     return YES;
 }

@@ -16,6 +16,11 @@
 		B060B7E720BC0624001FD0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E620BC0624001FD0CE /* Assets.xcassets */; };
 		B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */; };
 		B060B7ED20BC0624001FD0CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B060B7EC20BC0624001FD0CE /* main.m */; };
+		F116EA2320C9CA22000A24F6 /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA1E20C9CA22000A24F6 /* libmerged.a */; };
+		F116EA2420C9CA22000A24F6 /* libplist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA1F20C9CA22000A24F6 /* libplist.a */; };
+		F116EA2520C9CA22000A24F6 /* libimg4tool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA2020C9CA22000A24F6 /* libimg4tool.a */; };
+		F116EA2620C9CA22000A24F6 /* liboffsetfinder64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA2120C9CA22000A24F6 /* liboffsetfinder64.a */; };
+		F116EA2720C9CA22000A24F6 /* libplist++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA2220C9CA22000A24F6 /* libplist++.a */; };
 		F12FD1F420C876A6006BA4FD /* kexecute.c in Sources */ = {isa = PBXBuildFile; fileRef = F12FD1F220C876A6006BA4FD /* kexecute.c */; };
 		F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9520C89C7600DA1F72 /* amfi_utils.c */; };
 		F134CC9920C89CA700DA1F72 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9720C89CA600DA1F72 /* utils.c */; };
@@ -50,6 +55,12 @@
 		B060B7EB20BC0624001FD0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B060B7EC20BC0624001FD0CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B060B7F320BC063F001FD0CE /* multi_path.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = multi_path.entitlements; sourceTree = "<group>"; };
+		F116EA1E20C9CA22000A24F6 /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
+		F116EA1F20C9CA22000A24F6 /* libplist.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libplist.a; sourceTree = "<group>"; };
+		F116EA2020C9CA22000A24F6 /* libimg4tool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libimg4tool.a; sourceTree = "<group>"; };
+		F116EA2120C9CA22000A24F6 /* liboffsetfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboffsetfinder64.a; sourceTree = "<group>"; };
+		F116EA2220C9CA22000A24F6 /* libplist++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libplist++.a"; sourceTree = "<group>"; };
+		F116EA2820C9CA5F000A24F6 /* liboffsetfinder64.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = liboffsetfinder64.hpp; sourceTree = "<group>"; };
 		F12FD1F220C876A6006BA4FD /* kexecute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kexecute.c; sourceTree = "<group>"; };
 		F12FD1F320C876A6006BA4FD /* kexecute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kexecute.h; sourceTree = "<group>"; };
 		F134CC9420C89C7600DA1F72 /* amfi_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amfi_utils.h; sourceTree = "<group>"; };
@@ -88,6 +99,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F116EA2420C9CA22000A24F6 /* libplist.a in Frameworks */,
+				F116EA2520C9CA22000A24F6 /* libimg4tool.a in Frameworks */,
+				F116EA2620C9CA22000A24F6 /* liboffsetfinder64.a in Frameworks */,
+				F116EA2720C9CA22000A24F6 /* libplist++.a in Frameworks */,
+				F116EA2320C9CA22000A24F6 /* libmerged.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +136,11 @@
 				B060B7E120BC0624001FD0CE /* ViewController.m */,
 				F167E3C720C9281A006B956D /* NSData+GZip.h */,
 				F167E3C820C9281A006B956D /* NSData+GZip.m */,
+				F116EA2020C9CA22000A24F6 /* libimg4tool.a */,
+				F116EA1E20C9CA22000A24F6 /* libmerged.a */,
+				F116EA2120C9CA22000A24F6 /* liboffsetfinder64.a */,
+				F116EA1F20C9CA22000A24F6 /* libplist.a */,
+				F116EA2220C9CA22000A24F6 /* libplist++.a */,
 				B060B7E320BC0624001FD0CE /* Main.storyboard */,
 				F13A09E820C8609400DC838E /* headers */,
 				F13A09DC20C85E3D00DC838E /* exploit */,
@@ -192,6 +213,7 @@
 				F13A09E920C860A800DC838E /* codesign.h */,
 				F13A09EB20C860A800DC838E /* IOKit.h */,
 				F13A09EA20C860A800DC838E /* xpc_minimal.h */,
+				F116EA2820C9CA5F000A24F6 /* liboffsetfinder64.hpp */,
 			);
 			path = headers;
 			sourceTree = "<group>";
@@ -433,6 +455,10 @@
 				INFOPLIST_FILE = multi_path/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/multi_path",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
@@ -456,6 +482,10 @@
 				INFOPLIST_FILE = multi_path/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/multi_path",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
