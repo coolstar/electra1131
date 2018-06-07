@@ -25,6 +25,10 @@
 		F13A09E720C8603500DC838E /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09E620C8603500DC838E /* kutils.c */; };
 		F13A09EE20C8653E00DC838E /* multi_path_additions.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09EC20C8653E00DC838E /* multi_path_additions.c */; };
 		F13A09F120C8665800DC838E /* offsetof.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09EF20C8665800DC838E /* offsetof.c */; };
+		F167E3C320C927C1006B956D /* file_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C220C927C0006B956D /* file_utils.c */; };
+		F167E3C620C927DE006B956D /* electra_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C420C927DE006B956D /* electra_objc.m */; };
+		F167E3C920C9281A006B956D /* NSData+GZip.m in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C820C9281A006B956D /* NSData+GZip.m */; };
+		F167E3CC20C929F3006B956D /* unlocknvram.c in Sources */ = {isa = PBXBuildFile; fileRef = F167E3CA20C929F2006B956D /* unlocknvram.c */; };
 		F1E5C2C820C879A600438426 /* remap_tfp_set_hsp.c in Sources */ = {isa = PBXBuildFile; fileRef = F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +71,14 @@
 		F13A09ED20C8653E00DC838E /* multi_path_additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multi_path_additions.h; sourceTree = "<group>"; };
 		F13A09EF20C8665800DC838E /* offsetof.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = offsetof.c; sourceTree = "<group>"; };
 		F13A09F020C8665800DC838E /* offsetof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsetof.h; sourceTree = "<group>"; };
+		F167E3C120C927C0006B956D /* file_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_utils.h; sourceTree = "<group>"; };
+		F167E3C220C927C0006B956D /* file_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file_utils.c; sourceTree = "<group>"; };
+		F167E3C420C927DE006B956D /* electra_objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = electra_objc.m; sourceTree = "<group>"; };
+		F167E3C520C927DE006B956D /* electra_objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = electra_objc.h; sourceTree = "<group>"; };
+		F167E3C720C9281A006B956D /* NSData+GZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GZip.h"; sourceTree = "<group>"; };
+		F167E3C820C9281A006B956D /* NSData+GZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZip.m"; sourceTree = "<group>"; };
+		F167E3CA20C929F2006B956D /* unlocknvram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unlocknvram.c; sourceTree = "<group>"; };
+		F167E3CB20C929F2006B956D /* unlocknvram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unlocknvram.h; sourceTree = "<group>"; };
 		F1E5C2C620C879A600438426 /* remap_tfp_set_hsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remap_tfp_set_hsp.h; sourceTree = "<group>"; };
 		F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remap_tfp_set_hsp.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +118,8 @@
 				B060B7DE20BC0624001FD0CE /* AppDelegate.m */,
 				B060B7E020BC0624001FD0CE /* ViewController.h */,
 				B060B7E120BC0624001FD0CE /* ViewController.m */,
+				F167E3C720C9281A006B956D /* NSData+GZip.h */,
+				F167E3C820C9281A006B956D /* NSData+GZip.m */,
 				B060B7E320BC0624001FD0CE /* Main.storyboard */,
 				F13A09E820C8609400DC838E /* headers */,
 				F13A09DC20C85E3D00DC838E /* exploit */,
@@ -135,10 +149,14 @@
 			isa = PBXGroup;
 			children = (
 				F13A09E420C8602D00DC838E /* utilities */,
+				F167E3C520C927DE006B956D /* electra_objc.h */,
+				F167E3C420C927DE006B956D /* electra_objc.m */,
 				F13A09E120C85EFA00DC838E /* electra.c */,
 				F13A09E220C85EFA00DC838E /* electra.h */,
 				F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */,
 				F1E5C2C620C879A600438426 /* remap_tfp_set_hsp.h */,
+				F167E3CA20C929F2006B956D /* unlocknvram.c */,
+				F167E3CB20C929F2006B956D /* unlocknvram.h */,
 				F13A09DE20C85E9A00DC838E /* patchfinder64.c */,
 				F13A09DF20C85E9A00DC838E /* patchfinder64.h */,
 			);
@@ -160,6 +178,8 @@
 				F13A09F020C8665800DC838E /* offsetof.h */,
 				F134CC9720C89CA600DA1F72 /* utils.c */,
 				F134CC9820C89CA600DA1F72 /* utils.h */,
+				F167E3C220C927C0006B956D /* file_utils.c */,
+				F167E3C120C927C0006B956D /* file_utils.h */,
 				F134CC9A20C89D7A00DA1F72 /* apfs_util.c */,
 				F134CC9B20C89D7A00DA1F72 /* apfs_util.h */,
 			);
@@ -207,7 +227,7 @@
 				TargetAttributes = {
 					B060B7D920BC0624001FD0CE = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Multipath = {
 								enabled = 1;
@@ -266,7 +286,11 @@
 				F13A09EE20C8653E00DC838E /* multi_path_additions.c in Sources */,
 				B060B7DF20BC0624001FD0CE /* AppDelegate.m in Sources */,
 				F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */,
+				F167E3C320C927C1006B956D /* file_utils.c in Sources */,
+				F167E3C620C927DE006B956D /* electra_objc.m in Sources */,
 				F13A09F120C8665800DC838E /* offsetof.c in Sources */,
+				F167E3CC20C929F3006B956D /* unlocknvram.c in Sources */,
+				F167E3C920C9281A006B956D /* NSData+GZip.m in Sources */,
 				F1E5C2C820C879A600438426 /* remap_tfp_set_hsp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,8 +426,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = multi_path/multi_path.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U38NX4H29K;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = multi_path/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -412,7 +437,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.multi-path";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.laughingquoll.multi-path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,8 +449,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = multi_path/multi_path.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U38NX4H29K;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = multi_path/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -434,7 +460,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.multi-path";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.laughingquoll.multi-path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
