@@ -20,8 +20,10 @@ mach_port_t tfp0;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    if (multi_path_go() == KERN_SUCCESS)
-        start_electra(tfp0, true);
+    if (multi_path_go() == KERN_SUCCESS){
+        int rv = start_electra(tfp0, true);
+        printf("Electra returned with status %d\n", rv);
+    }
     exit(0);
     return YES;
 }

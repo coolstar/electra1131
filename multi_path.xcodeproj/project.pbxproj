@@ -33,6 +33,8 @@
 		F143E0F920C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F143E0F820C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp */; };
 		F143E0FB20C9ED0F0018A47B /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F143E0FA20C9ED0E0018A47B /* libmerged.a */; };
 		F143E10020C9ED670018A47B /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F143E0FF20C9ED670018A47B /* libcompression.tbd */; };
+		F161FD0E20CDB12D009D4652 /* bootstrap.c in Sources */ = {isa = PBXBuildFile; fileRef = F161FD0D20CDB12D009D4652 /* bootstrap.c */; };
+		F161FD1020CDB22D009D4652 /* start_jailbreakd.m in Sources */ = {isa = PBXBuildFile; fileRef = F161FD0F20CDB22D009D4652 /* start_jailbreakd.m */; };
 		F167E3C320C927C1006B956D /* file_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C220C927C0006B956D /* file_utils.c */; };
 		F167E3C620C927DE006B956D /* electra_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C420C927DE006B956D /* electra_objc.m */; };
 		F167E3C920C9281A006B956D /* NSData+GZip.m in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C820C9281A006B956D /* NSData+GZip.m */; };
@@ -94,6 +96,9 @@
 		F143E0FA20C9ED0E0018A47B /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
 		F143E0FD20C9ED310018A47B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F143E0FF20C9ED670018A47B /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
+		F161FD0C20CDB12D009D4652 /* bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bootstrap.h; sourceTree = "<group>"; };
+		F161FD0D20CDB12D009D4652 /* bootstrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bootstrap.c; sourceTree = "<group>"; };
+		F161FD0F20CDB22D009D4652 /* start_jailbreakd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = start_jailbreakd.m; sourceTree = "<group>"; };
 		F167E3C120C927C0006B956D /* file_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_utils.h; sourceTree = "<group>"; };
 		F167E3C220C927C0006B956D /* file_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file_utils.c; sourceTree = "<group>"; };
 		F167E3C420C927DE006B956D /* electra_objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = electra_objc.m; sourceTree = "<group>"; };
@@ -193,6 +198,9 @@
 				F167E3C420C927DE006B956D /* electra_objc.m */,
 				F13A09E120C85EFA00DC838E /* electra.c */,
 				F13A09E220C85EFA00DC838E /* electra.h */,
+				F161FD0D20CDB12D009D4652 /* bootstrap.c */,
+				F161FD0C20CDB12D009D4652 /* bootstrap.h */,
+				F161FD0F20CDB22D009D4652 /* start_jailbreakd.m */,
 				F143E0F820C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp */,
 				F143E0F420C9DF250018A47B /* rootfs_remount.c */,
 				F143E0F520C9DF250018A47B /* rootfs_remount.h */,
@@ -376,6 +384,7 @@
 				B030E1F620BC0864000CDD4C /* sploit.c in Sources */,
 				F134CC9920C89CA700DA1F72 /* utils.c in Sources */,
 				B060B7E220BC0624001FD0CE /* ViewController.m in Sources */,
+				F161FD1020CDB22D009D4652 /* start_jailbreakd.m in Sources */,
 				B060B7ED20BC0624001FD0CE /* main.m in Sources */,
 				B00730BC20C723AE005995FA /* offsets.m in Sources */,
 				F13A09E020C85E9A00DC838E /* patchfinder64.c in Sources */,
@@ -386,6 +395,7 @@
 				F13A09EE20C8653E00DC838E /* multi_path_additions.c in Sources */,
 				B060B7DF20BC0624001FD0CE /* AppDelegate.m in Sources */,
 				F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */,
+				F161FD0E20CDB12D009D4652 /* bootstrap.c in Sources */,
 				F143E0F920C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp in Sources */,
 				F167E3C320C927C1006B956D /* file_utils.c in Sources */,
 				F167E3C620C927DE006B956D /* electra_objc.m in Sources */,
