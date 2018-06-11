@@ -33,6 +33,7 @@
 		F143E0F920C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F143E0F820C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp */; };
 		F143E0FB20C9ED0F0018A47B /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F143E0FA20C9ED0E0018A47B /* libmerged.a */; };
 		F143E10020C9ED670018A47B /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F143E0FF20C9ED670018A47B /* libcompression.tbd */; };
+		F1524FCF20CE60A7001F9E25 /* jailbreakd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1524FCE20CE60A7001F9E25 /* jailbreakd.plist */; };
 		F161FD0E20CDB12D009D4652 /* bootstrap.c in Sources */ = {isa = PBXBuildFile; fileRef = F161FD0D20CDB12D009D4652 /* bootstrap.c */; };
 		F161FD1020CDB22D009D4652 /* start_jailbreakd.m in Sources */ = {isa = PBXBuildFile; fileRef = F161FD0F20CDB22D009D4652 /* start_jailbreakd.m */; };
 		F167E3C320C927C1006B956D /* file_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C220C927C0006B956D /* file_utils.c */; };
@@ -96,6 +97,7 @@
 		F143E0FA20C9ED0E0018A47B /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
 		F143E0FD20C9ED310018A47B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F143E0FF20C9ED670018A47B /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
+		F1524FCE20CE60A7001F9E25 /* jailbreakd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jailbreakd.plist; sourceTree = "<group>"; };
 		F161FD0C20CDB12D009D4652 /* bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bootstrap.h; sourceTree = "<group>"; };
 		F161FD0D20CDB12D009D4652 /* bootstrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bootstrap.c; sourceTree = "<group>"; };
 		F161FD0F20CDB22D009D4652 /* start_jailbreakd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = start_jailbreakd.m; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		F1BE57C020CDB0780087F82D /* bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				F1524FCE20CE60A7001F9E25 /* jailbreakd.plist */,
 				F1BE57C420CDB09E0087F82D /* bootstrap.tar.gz */,
 				F1BE57C320CDB09E0087F82D /* launchctl.gz */,
 				F1BE57C120CDB09E0087F82D /* rm.gz */,
@@ -339,6 +342,7 @@
 				F1BE57C620CDB09E0087F82D /* tar.gz in Resources */,
 				B060B7E720BC0624001FD0CE /* Assets.xcassets in Resources */,
 				F1BE57C720CDB09E0087F82D /* launchctl.gz in Resources */,
+				F1524FCF20CE60A7001F9E25 /* jailbreakd.plist in Resources */,
 				B060B7E520BC0624001FD0CE /* Main.storyboard in Resources */,
 				F1BE57C520CDB09E0087F82D /* rm.gz in Resources */,
 			);
