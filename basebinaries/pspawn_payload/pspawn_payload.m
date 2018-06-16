@@ -248,7 +248,7 @@ static void ctor(void) {
             DEBUGLOG("Can't get hgsp15 :(");
             return;
         }
-        DEBUGLOG("Got jbd port: %llx", jbd_port);
+        DEBUGLOG("Got jbd port: %x", jbd_port);
         
         current_process = PROCESS_LAUNCHD;
         pthread_t thd;
@@ -258,7 +258,7 @@ static void ctor(void) {
             DEBUGLOG("Can't get bootstrap port :(");
             return;
         }
-        DEBUGLOG("Got jbd port: %llx", jbd_port);
+        DEBUGLOG("Got jbd port: %x", jbd_port);
         
         current_process = PROCESS_XPCPROXY;
         rebind_pspawns();

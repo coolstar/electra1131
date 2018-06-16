@@ -140,7 +140,7 @@ int handle_command(uint8_t command, uint32_t pid) {
 
 kern_return_t jbd_call(mach_port_t server_port, uint8_t command, uint32_t pid) {
 #ifdef JAILBREAKDDEBUG
-    fprintf(stderr,"[Mach] New call from %llx: command %x, pid %d\n", server_port, command, pid);
+    fprintf(stderr,"[Mach] New call from %x: command %x, pid %d\n", server_port, command, pid);
 #endif
     return (handle_command(command, pid) == 0) ? KERN_SUCCESS : KERN_FAILURE;
 }
