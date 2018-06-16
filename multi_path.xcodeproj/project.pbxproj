@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21E077F820D5425000F86A55 /* nonce.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E077F720D5424F00F86A55 /* nonce.c */; };
 		B00730BC20C723AE005995FA /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = B00730BB20C723AE005995FA /* offsets.m */; };
 		B00730C020C730BC005995FA /* README in Resources */ = {isa = PBXBuildFile; fileRef = B00730BF20C730BC005995FA /* README */; };
 		B030E1F620BC0864000CDD4C /* sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = B030E1F520BC0864000CDD4C /* sploit.c */; settings = {COMPILER_FLAGS = "-Wno-unused-variable"; }; };
@@ -49,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21E077F620D5424F00F86A55 /* nonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nonce.h; sourceTree = "<group>"; };
+		21E077F720D5424F00F86A55 /* nonce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nonce.c; sourceTree = "<group>"; };
 		B00730BB20C723AE005995FA /* offsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
 		B00730BD20C7273C005995FA /* offsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		B00730BE20C72BCB005995FA /* kmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		F13A09E420C8602D00DC838E /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				21E077F720D5424F00F86A55 /* nonce.c */,
+				21E077F620D5424F00F86A55 /* nonce.h */,
 				F134CC9520C89C7600DA1F72 /* amfi_utils.c */,
 				F134CC9420C89C7600DA1F72 /* amfi_utils.h */,
 				F13A09EC20C8653E00DC838E /* multi_path_additions.c */,
@@ -394,6 +399,7 @@
 				F134CC9C20C89D7A00DA1F72 /* apfs_util.c in Sources */,
 				B030E1F620BC0864000CDD4C /* sploit.c in Sources */,
 				F134CC9920C89CA700DA1F72 /* utils.c in Sources */,
+				21E077F820D5425000F86A55 /* nonce.c in Sources */,
 				B060B7E220BC0624001FD0CE /* ViewController.m in Sources */,
 				F161FD1020CDB22D009D4652 /* start_jailbreakd.m in Sources */,
 				B060B7ED20BC0624001FD0CE /* main.m in Sources */,
