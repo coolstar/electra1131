@@ -237,10 +237,6 @@ uint64_t get_exception_osarray(void) {
 static const char *exc_key = "com.apple.security.exception.files.absolute-path.read-only";
 
 void set_sandbox_extensions(uint64_t proc) {
-    if (kCFCoreFoundationVersionNumber > 1451.51){
-        fprintf(stderr,"skipping set_sandbox_extensions on 11.3.x\n");
-        return;
-    }
   uint64_t proc_ucred = rk64(proc+0x100);
   uint64_t sandbox = rk64(rk64(proc_ucred+0x78) + 8 + 8);
 
