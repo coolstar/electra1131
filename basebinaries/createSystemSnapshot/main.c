@@ -173,6 +173,7 @@ int main(int argc, char **argv) {
         sprintf(name, "electra-tmp-snapshot-%lu", time(NULL));
         char *p = &name[0];
         nw = strdup(p);
+        free(p);
         ret = do_rename(system_snapshot, nw);
         if (ret) {
             return -2;
