@@ -8,7 +8,7 @@
 
 @implementation AppDelegate
 
-mach_port_t tfp0;
+mach_port_t tfp0 = MACH_PORT_NULL;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
