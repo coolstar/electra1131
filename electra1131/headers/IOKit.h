@@ -20,6 +20,10 @@ kern_return_t mach_vm_read(
 
 typedef mach_port_t io_service_t;
 typedef mach_port_t io_connect_t;
+typedef mach_port_t    io_object_t;
+typedef io_object_t    io_registry_entry_t;
+typedef char        io_name_t[128];
+typedef char             io_struct_inband_t[4096];
 
 extern const mach_port_t kIOMasterPortDefault;
 #define IO_OBJECT_NULL (0)
@@ -68,6 +72,26 @@ IOServiceOpen(
               task_port_t   owningTask,
               uint32_t      type,
               io_connect_t* connect );
+
+io_service_t
+IOServiceGetMatchingService(
+                            mach_port_t  _masterPort,
+                            CFDictionaryRef  matching);
+
+CFMutableDictionaryRef
+IOServiceMatching(
+                  const char* name);
+
+kern_return_t
+IORegistryEntrySetCFProperties(
+                               io_registry_entry_t    entry,
+                               CFTypeRef         properties );
+kern_return_t
+IORegistryEntryGetProperty(
+                           io_registry_entry_t    entry,
+                           const io_name_t        propertyName,
+                           io_struct_inband_t    buffer,
+                           uint32_t          * size );
 
 kern_return_t IOConnectTrap6(io_connect_t connect, uint32_t index, uintptr_t p1, uintptr_t p2, uintptr_t p3, uintptr_t p4, uintptr_t p5, uintptr_t p6);
 kern_return_t mach_vm_read_overwrite(vm_map_t target_task, mach_vm_address_t address, mach_vm_size_t size, mach_vm_address_t data, mach_vm_size_t *outsize);
