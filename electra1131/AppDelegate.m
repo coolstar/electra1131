@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  multi_path
-//
-//  Created by Ian Beer on 5/28/18.
-//  Copyright © 2018 Ian Beer. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #include "sploit.h"
 #include "electra.h"
