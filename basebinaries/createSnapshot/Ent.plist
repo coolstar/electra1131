@@ -4,15 +4,7 @@
 <dict>
 	<key>platform-application</key>
 	<true/>
-	<key>com.apple.private.apfs.revert-to-snapshot</key>
-	<true/>
 	<key>com.apple.private.vfs.snapshot</key>
-	<true/>
-	<key>com.apple.private.security.disk-device-access</key>
-	<true/>
-	<key>com.apple.keystore.device</key>
-	<true/>
-	<key>com.apple.keystore.devicebackup</key>
 	<true/>
 </dict>
 </plist>
