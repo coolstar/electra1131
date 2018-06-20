@@ -42,6 +42,7 @@
 		F167E3C920C9281A006B956D /* NSData+GZip.m in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C820C9281A006B956D /* NSData+GZip.m */; };
 		F167E3CC20C929F3006B956D /* unlocknvram.c in Sources */ = {isa = PBXBuildFile; fileRef = F167E3CA20C929F2006B956D /* unlocknvram.c */; };
 		F17CE1B720D0F8F700D66972 /* ldrestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F17CE1B520D0F8F700D66972 /* ldrestart.cpp */; };
+		F19119E620D9FE0F00CA1BB5 /* CSGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = F19119E420D9FE0F00CA1BB5 /* CSGradientView.m */; };
 		F1BE57C520CDB09E0087F82D /* rm.gz in Resources */ = {isa = PBXBuildFile; fileRef = F1BE57C120CDB09E0087F82D /* rm.gz */; };
 		F1BE57C620CDB09E0087F82D /* tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = F1BE57C220CDB09E0087F82D /* tar.gz */; };
 		F1BE57C720CDB09E0087F82D /* launchctl.gz in Resources */ = {isa = PBXBuildFile; fileRef = F1BE57C320CDB09E0087F82D /* launchctl.gz */; };
@@ -116,6 +117,8 @@
 		F17CE1B520D0F8F700D66972 /* ldrestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ldrestart.cpp; sourceTree = "<group>"; };
 		F17CE1B620D0F8F700D66972 /* ldrestart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ldrestart.h; sourceTree = "<group>"; };
 		F17CE1B920D0F95400D66972 /* launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = launch.h; sourceTree = "<group>"; };
+		F19119E420D9FE0F00CA1BB5 /* CSGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGradientView.m; sourceTree = "<group>"; };
+		F19119E520D9FE0F00CA1BB5 /* CSGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGradientView.h; sourceTree = "<group>"; };
 		F1BE57C120CDB09E0087F82D /* rm.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = rm.gz; sourceTree = "<group>"; };
 		F1BE57C220CDB09E0087F82D /* tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = tar.gz; sourceTree = "<group>"; };
 		F1BE57C320CDB09E0087F82D /* launchctl.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = launchctl.gz; sourceTree = "<group>"; };
@@ -162,10 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				B060B7F320BC063F001FD0CE /* electra1131.entitlements */,
-				B060B7DD20BC0624001FD0CE /* AppDelegate.h */,
-				B060B7DE20BC0624001FD0CE /* AppDelegate.m */,
-				B060B7E020BC0624001FD0CE /* ViewController.h */,
-				B060B7E120BC0624001FD0CE /* ViewController.m */,
+				F19119E220D9FDE000CA1BB5 /* app */,
 				F167E3C720C9281A006B956D /* NSData+GZip.h */,
 				F167E3C820C9281A006B956D /* NSData+GZip.m */,
 				F116EA2020C9CA22000A24F6 /* libimg4tool.a */,
@@ -173,13 +173,11 @@
 				F116EA2120C9CA22000A24F6 /* liboffsetfinder64.a */,
 				F116EA1F20C9CA22000A24F6 /* libplist.a */,
 				F116EA2220C9CA22000A24F6 /* libplist++.a */,
-				B060B7E320BC0624001FD0CE /* Main.storyboard */,
 				F13A09E820C8609400DC838E /* headers */,
 				F13A09DC20C85E3D00DC838E /* exploit */,
 				F1BE57C020CDB0780087F82D /* bootstrap */,
 				F13A09DD20C85E7700DC838E /* post-exploit */,
 				B060B7E620BC0624001FD0CE /* Assets.xcassets */,
-				B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */,
 				B060B7EB20BC0624001FD0CE /* Info.plist */,
 				B060B7EC20BC0624001FD0CE /* main.m */,
 			);
@@ -269,6 +267,37 @@
 				F143E0FD20C9ED310018A47B /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F19119E120D9FDD800CA1BB5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B060B7E020BC0624001FD0CE /* ViewController.h */,
+				B060B7E120BC0624001FD0CE /* ViewController.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		F19119E220D9FDE000CA1BB5 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				B060B7DD20BC0624001FD0CE /* AppDelegate.h */,
+				B060B7DE20BC0624001FD0CE /* AppDelegate.m */,
+				B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */,
+				B060B7E320BC0624001FD0CE /* Main.storyboard */,
+				F19119E120D9FDD800CA1BB5 /* controllers */,
+				F19119E320D9FE0200CA1BB5 /* view */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		F19119E320D9FE0200CA1BB5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F19119E520D9FE0F00CA1BB5 /* CSGradientView.h */,
+				F19119E420D9FE0F00CA1BB5 /* CSGradientView.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		F1BE57C020CDB0780087F82D /* bootstrap */ = {
@@ -406,6 +435,7 @@
 				B00730BC20C723AE005995FA /* offsets.m in Sources */,
 				F13A09E020C85E9A00DC838E /* patchfinder64.c in Sources */,
 				F143E0F620C9DF250018A47B /* rootfs_remount.c in Sources */,
+				F19119E620D9FE0F00CA1BB5 /* CSGradientView.m in Sources */,
 				F17CE1B720D0F8F700D66972 /* ldrestart.cpp in Sources */,
 				F13A09E720C8603500DC838E /* kutils.c in Sources */,
 				F12FD1F420C876A6006BA4FD /* kexecute.c in Sources */,

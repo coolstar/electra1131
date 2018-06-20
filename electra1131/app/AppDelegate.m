@@ -1,6 +1,4 @@
 #import "AppDelegate.h"
-#include "sploit.h"
-#include "electra.h"
 
 @interface AppDelegate ()
 
@@ -8,16 +6,24 @@
 
 @implementation AppDelegate
 
-mach_port_t tfp0 = MACH_PORT_NULL;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    if (multi_path_go() == KERN_SUCCESS){
-        int rv = start_electra(tfp0, true);
-        printf("Electra returned with status %d\n", rv);
-    }
-    exit(0);
+    [self jailbreakShortcut];
     return YES;
+}
+
+- (void)jailbreakShortcut {
+    NSMutableArray *shortcutItems = [NSMutableArray array];
+    UIApplicationShortcutItem *jb =  [[UIApplicationShortcutItem alloc]initWithType:@"1" localizedTitle:@"Jailbreak"];
+    [shortcutItems addObject:jb];
+    [[UIApplication sharedApplication] setShortcutItems:shortcutItems];
+}
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    switch (shortcutItem.type.integerValue) {
+        case 1: {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Jailbreak" object:self userInfo:@{@"type":@"1"}];
+        }   break;
+    }
 }
 
 
