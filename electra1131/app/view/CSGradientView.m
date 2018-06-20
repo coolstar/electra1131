@@ -7,9 +7,9 @@
     self = [super initWithCoder:aDecoder];
     if (self){
         CAGradientLayer *layer = (CAGradientLayer *)self.layer;
-        layer.startPoint = CGPointMake(0, 0);
-        layer.endPoint = CGPointMake(1, 1);
-        layer.colors = @[(id)[[UIColor colorWithRed:32.5f/255.0f green:41.2f/255.0f blue:46.3f/255.0f alpha:1.0f] CGColor], (id)[[UIColor colorWithRed:83.0f/255.0f green:105.0f/255.0f blue:118.0f/255.0f alpha:1.0f] CGColor]];
+        layer.startPoint = CGPointMake(0.5, 0);
+        layer.endPoint = CGPointMake(0.5, 1);
+        layer.colors = @[(id)[[UIColor colorWithRed:83.0f/255.0f green:105.2f/255.0f blue:118.3f/255.0f alpha:1.0f] CGColor], (id)[[UIColor colorWithRed:58.0f/255.0f green:70.0f/255.0f blue:91.0f/255.0f alpha:1.0f] CGColor]];
     }
     return self;
 }

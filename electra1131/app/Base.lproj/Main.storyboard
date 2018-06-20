@@ -26,6 +26,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-vM-HNw" customClass="CSGradientView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="tZ9-9J-VWS">
                                 <rect key="frame" x="123" y="110" width="168" height="43"/>
                             </imageView>
@@ -211,11 +215,13 @@ Cg
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.32549019607843138" green="0.41176470588235292" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="h2M-vM-HNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0nK-KL-9Kh"/>
+                            <constraint firstItem="5QN-ZM-Myu" firstAttribute="top" secondItem="h2M-vM-HNw" secondAttribute="bottom" id="9tE-vZ-TUr"/>
                             <constraint firstItem="jPt-Se-ZOo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-35" id="Bgp-Ij-aIP"/>
                             <constraint firstItem="5QN-ZM-Myu" firstAttribute="top" secondItem="DoH-WZ-oqx" secondAttribute="bottom" constant="10" id="NC7-aP-HBh"/>
                             <constraint firstItem="5QN-ZM-Myu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rpm-wp-Xqb"/>
+                            <constraint firstItem="h2M-vM-HNw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SQa-fY-qUJ"/>
                             <constraint firstItem="tZ9-9J-VWS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="T2A-FM-1nl"/>
                             <constraint firstItem="5QN-ZM-Myu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TKg-ws-5VP"/>
                             <constraint firstItem="5QN-ZM-Myu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g4G-dH-HRj"/>
@@ -223,6 +229,7 @@ Cg
                             <constraint firstItem="jPt-Se-ZOo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q37-63-oKF"/>
                             <constraint firstItem="5QN-ZM-Myu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qcZ-8l-bOg"/>
                             <constraint firstItem="DoH-WZ-oqx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rKz-w5-qES"/>
+                            <constraint firstItem="h2M-vM-HNw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x2S-c5-lhX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -238,7 +245,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29.600000000000001" y="31.934032983508249"/>
+            <point key="canvasLocation" x="28.985507246376812" y="31.793478260869566"/>
         </scene>
     </scenes>
     <resources>

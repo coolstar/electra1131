@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "CSGradientView.h"
 
 @interface ViewController : UIViewController {
     IBOutlet UIImageView *_logoView;
