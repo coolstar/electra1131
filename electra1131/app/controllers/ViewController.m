@@ -2,6 +2,7 @@
 #include "codesign.h"
 #include "electra.h"
 #include "sploit.h"
+#include "electra_objc.h"
 
 @interface ViewController ()
 
@@ -85,7 +86,7 @@ mach_port_t tfp0 = MACH_PORT_NULL;
 }
 
 - (IBAction)credits:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:@"Thanks to CoolStar, Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29\nlibsubstitute by comex\nContains code from simject by angelXwind\nAnemone by CoolStar, kirb, isklikas and goeo\nPreferenceLoader by DHowett & rpetrich" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:@"Thanks to CoolStar, Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29" preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
@@ -115,7 +116,7 @@ mach_port_t tfp0 = MACH_PORT_NULL;
         
         int jailbreakstatus = start_electra(tfp0, shouldEnableTweaks);
         
-        if (jailbreakstatus == 0){
+        if (jailbreakstatus == ERR_NOERR){
             dispatch_async(dispatch_get_main_queue(), ^{
                 [sender setTitle:@"Jailbroken" forState:UIControlStateNormal];
                 
@@ -126,19 +127,19 @@ mach_port_t tfp0 = MACH_PORT_NULL;
                 }]];
                 [self presentViewController:openSSHRunning animated:YES completion:nil];
             });
-        } else if (jailbreakstatus == -1) {
+        } else if (jailbreakstatus == ERR_TFP0) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [sender setTitle:@"Error: tfp0" forState:UIControlStateNormal];
             });
-        } else if (jailbreakstatus == -2) {
+        } else if (jailbreakstatus == ERR_ALREADY_JAILBROKEN) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [sender setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
             });
-        } else if (jailbreakstatus == -3) {
+        } else if (jailbreakstatus == ERR_AMFID_PATCH) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [sender setTitle:@"Error: amfid patch" forState:UIControlStateNormal];
             });
-        } else if (jailbreakstatus == -5) {
+        } else if (jailbreakstatus == ERR_SNAPSHOT) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [sender setTitle:@"Error: snapshot failed" forState:UIControlStateNormal];
             });
@@ -168,6 +169,7 @@ NSString *_urlForUsername(NSString *user) {
     }
     return nil;
 }
+
 - (IBAction)tappedOnHyperlink:(id)sender {
     [sender setAlpha:0.7];
     UIApplication *application = [UIApplication sharedApplication];
@@ -216,6 +218,7 @@ NSString *_urlForUsername(NSString *user) {
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
+
 - (IBAction)enableTweaksChanged:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL enableTweaks = [_enableTweaks isOn];
