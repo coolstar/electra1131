@@ -11,6 +11,8 @@ static ViewController *currentViewController;
 
 @implementation ViewController
 
+#define K_ENABLE_TWEAKS "enableTweaks"
+
 mach_port_t tfp0 = MACH_PORT_NULL;
 
 + (instancetype)currentViewController {
@@ -52,6 +54,14 @@ mach_port_t tfp0 = MACH_PORT_NULL;
         
         enable3DTouch = NO;
     }
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:@K_ENABLE_TWEAKS] == nil) {
+        [userDefaults setBool:YES forKey:@K_ENABLE_TWEAKS];
+        [userDefaults synchronize];
+    }
+    BOOL enableTweaks = [userDefaults boolForKey:@K_ENABLE_TWEAKS];
+    [_enableTweaks setOn:enableTweaks];
     
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
@@ -205,6 +215,12 @@ NSString *_urlForUsername(NSString *user) {
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+- (IBAction)enableTweaksChanged:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL enableTweaks = [_enableTweaks isOn];
+    [userDefaults setBool:enableTweaks forKey:@K_ENABLE_TWEAKS];
+    [userDefaults synchronize];
 }
 
 - (void)dealloc {
