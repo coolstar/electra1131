@@ -187,6 +187,12 @@ NSString *_urlForUsername(NSString *user) {
     [sender setAlpha:1.0];
 }
 
+- (void)removingLiberiOS {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_jailbreak setTitle:@"Removing liberiOS" forState:UIControlStateNormal];
+    });
+}
+
 - (void)installingCydia {
     dispatch_async(dispatch_get_main_queue(), ^{
         [_jailbreak setTitle:@"Installing Cydia" forState:UIControlStateNormal];

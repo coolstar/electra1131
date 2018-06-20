@@ -11,6 +11,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *jailbreak;
 @property (weak, nonatomic) IBOutlet UISwitch *enableTweaks;
 + (instancetype)currentViewController;
+- (void)removingLiberiOS;
 - (void)installingCydia;
 - (void)cydiaDone;
 - (void)displaySnapshotNotice;

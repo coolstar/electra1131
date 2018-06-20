@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21A2C41220DAAA14000BA2B2 /* unliberios.c in Sources */ = {isa = PBXBuildFile; fileRef = 21A2C41120DAAA14000BA2B2 /* unliberios.c */; };
 		21E077F820D5425000F86A55 /* nonce.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E077F720D5424F00F86A55 /* nonce.c */; };
 		B00730BC20C723AE005995FA /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = B00730BB20C723AE005995FA /* offsets.m */; };
 		B00730C020C730BC005995FA /* README in Resources */ = {isa = PBXBuildFile; fileRef = B00730BF20C730BC005995FA /* README */; };
@@ -51,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21A2C41020DAAA13000BA2B2 /* unliberios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unliberios.h; sourceTree = "<group>"; };
+		21A2C41120DAAA14000BA2B2 /* unliberios.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unliberios.c; sourceTree = "<group>"; };
 		21E077F620D5424F00F86A55 /* nonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nonce.h; sourceTree = "<group>"; };
 		21E077F720D5424F00F86A55 /* nonce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nonce.c; sourceTree = "<group>"; };
 		B00730BB20C723AE005995FA /* offsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 		F13A09E420C8602D00DC838E /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				21A2C41120DAAA14000BA2B2 /* unliberios.c */,
+				21A2C41020DAAA13000BA2B2 /* unliberios.h */,
 				21E077F720D5424F00F86A55 /* nonce.c */,
 				21E077F620D5424F00F86A55 /* nonce.h */,
 				F134CC9520C89C7600DA1F72 /* amfi_utils.c */,
@@ -436,6 +441,7 @@
 				F13A09E020C85E9A00DC838E /* patchfinder64.c in Sources */,
 				F143E0F620C9DF250018A47B /* rootfs_remount.c in Sources */,
 				F19119E620D9FE0F00CA1BB5 /* CSGradientView.m in Sources */,
+				21A2C41220DAAA14000BA2B2 /* unliberios.c in Sources */,
 				F17CE1B720D0F8F700D66972 /* ldrestart.cpp in Sources */,
 				F13A09E720C8603500DC838E /* kutils.c in Sources */,
 				F12FD1F420C876A6006BA4FD /* kexecute.c in Sources */,
