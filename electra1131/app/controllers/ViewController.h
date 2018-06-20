@@ -1,6 +1,12 @@
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    IBOutlet UIImageView *_logoView;
+    IBOutlet UIStackView *_jailbreakButtonStackView;
+    IBOutlet UIStackView *_creditsLabelStackView;
+    IBOutlet UIView *_bottomPanelView;
+    IBOutlet UIView *_tweaksContainerView;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *jailbreak;
 @property (weak, nonatomic) IBOutlet UISwitch *enableTweaks;
