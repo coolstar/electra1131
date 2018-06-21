@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		21A2C41220DAAA14000BA2B2 /* unliberios.c in Sources */ = {isa = PBXBuildFile; fileRef = 21A2C41120DAAA14000BA2B2 /* unliberios.c */; };
+		21A2C43B20DBC09E000BA2B2 /* liboffsetfinder64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43620DBC09E000BA2B2 /* liboffsetfinder64.a */; };
+		21A2C43C20DBC09E000BA2B2 /* libplist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43720DBC09E000BA2B2 /* libplist.a */; };
+		21A2C43D20DBC09E000BA2B2 /* libimg4tool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43820DBC09E000BA2B2 /* libimg4tool.a */; };
+		21A2C43E20DBC09E000BA2B2 /* libplist++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43920DBC09E000BA2B2 /* libplist++.a */; };
+		21A2C43F20DBC09E000BA2B2 /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43A20DBC09E000BA2B2 /* libmerged.a */; };
 		21E077F820D5425000F86A55 /* nonce.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E077F720D5424F00F86A55 /* nonce.c */; };
 		B00730BC20C723AE005995FA /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = B00730BB20C723AE005995FA /* offsets.m */; };
 		B00730C020C730BC005995FA /* README in Resources */ = {isa = PBXBuildFile; fileRef = B00730BF20C730BC005995FA /* README */; };
@@ -18,10 +23,6 @@
 		B060B7E720BC0624001FD0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E620BC0624001FD0CE /* Assets.xcassets */; };
 		B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */; };
 		B060B7ED20BC0624001FD0CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B060B7EC20BC0624001FD0CE /* main.m */; };
-		F116EA2420C9CA22000A24F6 /* libplist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA1F20C9CA22000A24F6 /* libplist.a */; };
-		F116EA2520C9CA22000A24F6 /* libimg4tool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA2020C9CA22000A24F6 /* libimg4tool.a */; };
-		F116EA2620C9CA22000A24F6 /* liboffsetfinder64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA2120C9CA22000A24F6 /* liboffsetfinder64.a */; };
-		F116EA2720C9CA22000A24F6 /* libplist++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F116EA2220C9CA22000A24F6 /* libplist++.a */; };
 		F12FD1F420C876A6006BA4FD /* kexecute.c in Sources */ = {isa = PBXBuildFile; fileRef = F12FD1F220C876A6006BA4FD /* kexecute.c */; };
 		F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9520C89C7600DA1F72 /* amfi_utils.c */; };
 		F134CC9920C89CA700DA1F72 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = F134CC9720C89CA600DA1F72 /* utils.c */; };
@@ -33,7 +34,6 @@
 		F13A09F120C8665800DC838E /* offsetof.c in Sources */ = {isa = PBXBuildFile; fileRef = F13A09EF20C8665800DC838E /* offsetof.c */; };
 		F143E0F620C9DF250018A47B /* rootfs_remount.c in Sources */ = {isa = PBXBuildFile; fileRef = F143E0F420C9DF250018A47B /* rootfs_remount.c */; };
 		F143E0F920C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F143E0F820C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp */; };
-		F143E0FB20C9ED0F0018A47B /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F143E0FA20C9ED0E0018A47B /* libmerged.a */; };
 		F143E10020C9ED670018A47B /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F143E0FF20C9ED670018A47B /* libcompression.tbd */; };
 		F1524FCF20CE60A7001F9E25 /* jailbreakd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1524FCE20CE60A7001F9E25 /* jailbreakd.plist */; };
 		F161FD0E20CDB12D009D4652 /* bootstrap.c in Sources */ = {isa = PBXBuildFile; fileRef = F161FD0D20CDB12D009D4652 /* bootstrap.c */; };
@@ -53,6 +53,11 @@
 /* Begin PBXFileReference section */
 		21A2C41020DAAA13000BA2B2 /* unliberios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unliberios.h; sourceTree = "<group>"; };
 		21A2C41120DAAA14000BA2B2 /* unliberios.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unliberios.c; sourceTree = "<group>"; };
+		21A2C43620DBC09E000BA2B2 /* liboffsetfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboffsetfinder64.a; sourceTree = "<group>"; };
+		21A2C43720DBC09E000BA2B2 /* libplist.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libplist.a; sourceTree = "<group>"; };
+		21A2C43820DBC09E000BA2B2 /* libimg4tool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libimg4tool.a; sourceTree = "<group>"; };
+		21A2C43920DBC09E000BA2B2 /* libplist++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libplist++.a"; sourceTree = "<group>"; };
+		21A2C43A20DBC09E000BA2B2 /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
 		21E077F620D5424F00F86A55 /* nonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nonce.h; sourceTree = "<group>"; };
 		21E077F720D5424F00F86A55 /* nonce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nonce.c; sourceTree = "<group>"; };
 		B00730BB20C723AE005995FA /* offsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
@@ -72,10 +77,6 @@
 		B060B7EB20BC0624001FD0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B060B7EC20BC0624001FD0CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B060B7F320BC063F001FD0CE /* electra1131.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = electra1131.entitlements; sourceTree = "<group>"; };
-		F116EA1F20C9CA22000A24F6 /* libplist.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libplist.a; sourceTree = "<group>"; };
-		F116EA2020C9CA22000A24F6 /* libimg4tool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libimg4tool.a; sourceTree = "<group>"; };
-		F116EA2120C9CA22000A24F6 /* liboffsetfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboffsetfinder64.a; sourceTree = "<group>"; };
-		F116EA2220C9CA22000A24F6 /* libplist++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libplist++.a"; sourceTree = "<group>"; };
 		F116EA2820C9CA5F000A24F6 /* liboffsetfinder64.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = liboffsetfinder64.hpp; sourceTree = "<group>"; };
 		F12FD1F220C876A6006BA4FD /* kexecute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kexecute.c; sourceTree = "<group>"; };
 		F12FD1F320C876A6006BA4FD /* kexecute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kexecute.h; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		F143E0F420C9DF250018A47B /* rootfs_remount.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rootfs_remount.c; sourceTree = "<group>"; };
 		F143E0F520C9DF250018A47B /* rootfs_remount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rootfs_remount.h; sourceTree = "<group>"; };
 		F143E0F820C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rootfs_remount_offsetfinder.cpp; sourceTree = "<group>"; };
-		F143E0FA20C9ED0E0018A47B /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
 		F143E0FD20C9ED310018A47B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F143E0FF20C9ED670018A47B /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		F1524FCE20CE60A7001F9E25 /* jailbreakd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jailbreakd.plist; sourceTree = "<group>"; };
@@ -131,18 +131,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A2C43B20DBC09E000BA2B2 /* liboffsetfinder64.a in Frameworks */,
 				F143E10020C9ED670018A47B /* libcompression.tbd in Frameworks */,
-				F143E0FB20C9ED0F0018A47B /* libmerged.a in Frameworks */,
-				F116EA2420C9CA22000A24F6 /* libplist.a in Frameworks */,
-				F116EA2520C9CA22000A24F6 /* libimg4tool.a in Frameworks */,
-				F116EA2620C9CA22000A24F6 /* liboffsetfinder64.a in Frameworks */,
-				F116EA2720C9CA22000A24F6 /* libplist++.a in Frameworks */,
+				21A2C43D20DBC09E000BA2B2 /* libimg4tool.a in Frameworks */,
+				21A2C43E20DBC09E000BA2B2 /* libplist++.a in Frameworks */,
+				21A2C43C20DBC09E000BA2B2 /* libplist.a in Frameworks */,
+				21A2C43F20DBC09E000BA2B2 /* libmerged.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A2C43520DBC09E000BA2B2 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				21A2C43620DBC09E000BA2B2 /* liboffsetfinder64.a */,
+				21A2C43720DBC09E000BA2B2 /* libplist.a */,
+				21A2C43820DBC09E000BA2B2 /* libimg4tool.a */,
+				21A2C43920DBC09E000BA2B2 /* libplist++.a */,
+				21A2C43A20DBC09E000BA2B2 /* libmerged.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
 		B060B7D120BC0624001FD0CE = {
 			isa = PBXGroup;
 			children = (
@@ -163,15 +175,11 @@
 		B060B7DC20BC0624001FD0CE /* electra1131 */ = {
 			isa = PBXGroup;
 			children = (
+				21A2C43520DBC09E000BA2B2 /* libs */,
 				B060B7F320BC063F001FD0CE /* electra1131.entitlements */,
 				F19119E220D9FDE000CA1BB5 /* app */,
 				F167E3C720C9281A006B956D /* NSData+GZip.h */,
 				F167E3C820C9281A006B956D /* NSData+GZip.m */,
-				F116EA2020C9CA22000A24F6 /* libimg4tool.a */,
-				F143E0FA20C9ED0E0018A47B /* libmerged.a */,
-				F116EA2120C9CA22000A24F6 /* liboffsetfinder64.a */,
-				F116EA1F20C9CA22000A24F6 /* libplist.a */,
-				F116EA2220C9CA22000A24F6 /* libplist++.a */,
 				F13A09E820C8609400DC838E /* headers */,
 				F13A09DC20C85E3D00DC838E /* exploit */,
 				F1BE57C020CDB0780087F82D /* bootstrap */,
@@ -593,6 +601,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/electra1131",
+					"$(PROJECT_DIR)/electra1131/libs",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -620,6 +629,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/electra1131",
+					"$(PROJECT_DIR)/electra1131/libs",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
