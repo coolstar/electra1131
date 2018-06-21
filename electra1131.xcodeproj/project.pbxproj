@@ -93,7 +93,6 @@
 		F13A09E520C8603500DC838E /* kutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kutils.h; sourceTree = "<group>"; };
 		F13A09E620C8603500DC838E /* kutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kutils.c; sourceTree = "<group>"; };
 		F13A09E920C860A800DC838E /* codesign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codesign.h; sourceTree = "<group>"; };
-		F13A09EA20C860A800DC838E /* xpc_minimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xpc_minimal.h; sourceTree = "<group>"; };
 		F13A09EB20C860A800DC838E /* IOKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOKit.h; sourceTree = "<group>"; };
 		F13A09EC20C8653E00DC838E /* multi_path_additions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = multi_path_additions.c; sourceTree = "<group>"; };
 		F13A09ED20C8653E00DC838E /* multi_path_additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multi_path_additions.h; sourceTree = "<group>"; };
@@ -260,7 +259,6 @@
 			children = (
 				F13A09E920C860A800DC838E /* codesign.h */,
 				F13A09EB20C860A800DC838E /* IOKit.h */,
-				F13A09EA20C860A800DC838E /* xpc_minimal.h */,
 				F116EA2820C9CA5F000A24F6 /* liboffsetfinder64.hpp */,
 			);
 			path = headers;
