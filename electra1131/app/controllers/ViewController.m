@@ -91,6 +91,7 @@ mach_port_t tfp0 = MACH_PORT_NULL;
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
 - (IBAction)doit:(id)sender {
     [_jailbreak setEnabled:NO];
     [_enableTweaks setEnabled:NO];
