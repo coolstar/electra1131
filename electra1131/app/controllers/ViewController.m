@@ -12,9 +12,6 @@ static ViewController *currentViewController;
 
 @implementation ViewController
 
-void checkIntegrity(void);
-void checkInjection(void);
-
 #define K_ENABLE_TWEAKS "enableTweaks"
 
 mach_port_t tfp0 = MACH_PORT_NULL;
@@ -70,15 +67,11 @@ mach_port_t tfp0 = MACH_PORT_NULL;
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     
-    checkIntegrity();
-    
     if ((flags & CS_PLATFORM_BINARY)){
         [_jailbreak setEnabled:NO];
         [_enableTweaks setEnabled:NO];
         [_jailbreak setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
         enable3DTouch = NO;
-    } else {
-        checkInjection();
     }
     if (enable3DTouch){
         [notificationCenter addObserver:self selector:@selector(doit:) name:@"Jailbreak" object:nil];
