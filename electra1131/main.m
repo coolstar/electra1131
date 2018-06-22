@@ -36,6 +36,7 @@ int main(int argc, char * argv[]) {
     jl = [hashOfFile UTF8String]; \
     hash = jl;
 #define JAILBREAKDPLISTSHA256 "f40335198d3c6fd7d2ac2cf817d8991d95658f75e1bb3fa74dc2cddb7b428084"
+#define CREATESYSTEMSNAPSHOTPLISTSHA256 "8c05b9f87fc3066ee07cd631b44a2e4319f6205f380745b5d26748f7037ae699"
 #define BOOTSTRAPTARGZSHA256 "b53eecfcbd376cbc3f7a31c94a80d285692cf1574f84c0c164229419a614a6e0"
 #define LAUNCHCTLGZSHA256 "731ead6e5aea656602b8ac72cab90a72a80575f983d1e4da81f06acf51c16505"
 #define RMGZSHA256 "ec0398b33cff56a797cba7047c9a1ab9016547c1ebf58b19baa841846f8151ad"
@@ -43,6 +44,11 @@ int main(int argc, char * argv[]) {
       getProgname("jailbreakd.plist");
       getSHA256HashOfFile(progName);
       if (strcmp(hash, JAILBREAKDPLISTSHA256) != 0) {
+          rv = -1;
+      }
+      getProgname("createSystemSnapshot.plist");
+      getSHA256HashOfFile(progName);
+      if (strcmp(hash, CREATESYSTEMSNAPSHOTPLISTSHA256) != 0) {
           rv = -1;
       }
       getProgname("bootstrap.tar.gz");

@@ -93,12 +93,12 @@ mach_port_t tfp0 = MACH_PORT_NULL;
 }
 
 - (IBAction)doit:(id)sender {
-    [_jailbreak setEnabled:NO];
+    [sender setEnabled:NO];
     [_enableTweaks setEnabled:NO];
     
     currentViewController = self;
     
-    [_jailbreak setTitle:@"Please Wait (1/3)" forState:UIControlStateNormal];
+    [sender setTitle:@"Please Wait (1/3)" forState:UIControlStateNormal];
     
     BOOL shouldEnableTweaks = [_enableTweaks isOn];
     
@@ -107,13 +107,13 @@ mach_port_t tfp0 = MACH_PORT_NULL;
         
         if (ret != KERN_SUCCESS) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [_jailbreak setTitle:@"Error: exploit" forState:UIControlStateNormal];
+                [sender setTitle:@"Error: exploit" forState:UIControlStateNormal];
             });
             return;
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_jailbreak setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
+            [sender setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
         });
         
         int jailbreakstatus = start_electra(tfp0, shouldEnableTweaks);
@@ -140,6 +140,10 @@ mach_port_t tfp0 = MACH_PORT_NULL;
         } else if (jailbreakstatus == ERR_AMFID_PATCH) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [sender setTitle:@"Error: amfid patch" forState:UIControlStateNormal];
+            });
+        }  else if (jailbreakstatus == ERR_ROOTFS_REMOUNT) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [sender setTitle:@"Error: rootfs remount" forState:UIControlStateNormal];
             });
         } else if (jailbreakstatus == ERR_SNAPSHOT) {
             dispatch_async(dispatch_get_main_queue(), ^{

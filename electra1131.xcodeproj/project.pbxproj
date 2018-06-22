@@ -13,6 +13,7 @@
 		21A2C43D20DBC09E000BA2B2 /* libimg4tool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43820DBC09E000BA2B2 /* libimg4tool.a */; };
 		21A2C43E20DBC09E000BA2B2 /* libplist++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43920DBC09E000BA2B2 /* libplist++.a */; };
 		21A2C43F20DBC09E000BA2B2 /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43A20DBC09E000BA2B2 /* libmerged.a */; };
+		21D9C6D920DD333700E25E87 /* createSystemSnapshot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */; };
 		21E077F820D5425000F86A55 /* nonce.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E077F720D5424F00F86A55 /* nonce.c */; };
 		B00730BC20C723AE005995FA /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = B00730BB20C723AE005995FA /* offsets.m */; };
 		B00730C020C730BC005995FA /* README in Resources */ = {isa = PBXBuildFile; fileRef = B00730BF20C730BC005995FA /* README */; };
@@ -58,6 +59,7 @@
 		21A2C43820DBC09E000BA2B2 /* libimg4tool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libimg4tool.a; sourceTree = "<group>"; };
 		21A2C43920DBC09E000BA2B2 /* libplist++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libplist++.a"; sourceTree = "<group>"; };
 		21A2C43A20DBC09E000BA2B2 /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
+		21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = createSystemSnapshot.plist; sourceTree = "<group>"; };
 		21E077F620D5424F00F86A55 /* nonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nonce.h; sourceTree = "<group>"; };
 		21E077F720D5424F00F86A55 /* nonce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nonce.c; sourceTree = "<group>"; };
 		B00730BB20C723AE005995FA /* offsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 		F1BE57C020CDB0780087F82D /* bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */,
 				F1524FCE20CE60A7001F9E25 /* jailbreakd.plist */,
 				F1BE57C420CDB09E0087F82D /* bootstrap.tar.gz */,
 				F1BE57C320CDB09E0087F82D /* launchctl.gz */,
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B00730C020C730BC005995FA /* README in Resources */,
+				21D9C6D920DD333700E25E87 /* createSystemSnapshot.plist in Resources */,
 				B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */,
 				F1BE57C820CDB09E0087F82D /* bootstrap.tar.gz in Resources */,
 				F1BE57C620CDB09E0087F82D /* tar.gz in Resources */,
