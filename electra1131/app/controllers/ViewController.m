@@ -77,6 +77,8 @@ mach_port_t tfp0 = MACH_PORT_NULL;
         [notificationCenter addObserver:self selector:@selector(doit:) name:@"Jailbreak" object:nil];
     }
     
+    [_jailbreak.titleLabel setFont:[UIFont fontWithName:@".SFUIText-Bold" size:20.0]];
+    
   // Do any additional setup after loading the view, typically from a nib.
 }
 
