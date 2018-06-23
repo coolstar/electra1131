@@ -168,7 +168,7 @@ Cg
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweaks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-RC-SIx">
-                                                <rect key="frame" x="18" y="15" width="80" height="21"/>
+                                                <rect key="frame" x="18" y="14.666666666666631" width="80" height="21.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="UAb-4G-vmf"/>
                                                 </constraints>
@@ -227,6 +227,7 @@ Cg
                         <outlet property="_jailbreakButtonStackView" destination="jPt-Se-ZOo" id="20W-s8-uXI"/>
                         <outlet property="_logoView" destination="tZ9-9J-VWS" id="e3b-K0-L8V"/>
                         <outlet property="_tweaksContainerView" destination="tFy-KQ-Zk5" id="poO-LU-IdI"/>
+                        <outlet property="compatibilityLabel" destination="lmq-z1-MS4" id="JEY-nE-Rdl"/>
                         <outlet property="enableTweaks" destination="Ggt-pB-Zy0" id="6p8-EF-Uec"/>
                         <outlet property="jailbreak" destination="fB9-4u-Bfa" id="Qhc-Ja-xmU"/>
                     </connections>

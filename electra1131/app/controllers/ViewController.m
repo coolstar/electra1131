@@ -79,6 +79,18 @@ mach_port_t tfp0 = MACH_PORT_NULL;
     
     [_jailbreak.titleLabel setFont:[UIFont fontWithName:@".SFUIText-Bold" size:20.0]];
     
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"Compatible with\niOS 11.2 — 11.3.1 "];
+    [string addAttribute:NSFontAttributeName value:[UIFont fontWithName:@".SFUIText" size:15.0] range:NSMakeRange(0, 15)];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.3f] range:NSMakeRange(0, 15)];
+    [string addAttribute:NSFontAttributeName value:[UIFont fontWithName:@".SFUIText-Bold" size:16.0] range:NSMakeRange(15, 11)];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:NSMakeRange(15, 11)];
+    [string addAttribute:NSFontAttributeName value:[UIFont fontWithName:@".SFUIText-Medium" size:16.0] range:NSMakeRange(26, 1)];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:NSMakeRange(26, 1)];
+    [string addAttribute:NSFontAttributeName value:[UIFont fontWithName:@".SFUIText-Bold" size:16.0] range:NSMakeRange(27, 7)];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:NSMakeRange(27, 7)];
+    
+    [_compatibilityLabel setAttributedText:string];
+    
   // Do any additional setup after loading the view, typically from a nib.
 }
 
