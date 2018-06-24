@@ -15,6 +15,7 @@
 		21A2C43F20DBC09E000BA2B2 /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43A20DBC09E000BA2B2 /* libmerged.a */; };
 		21D9C6D920DD333700E25E87 /* createSystemSnapshot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */; };
 		21E077F820D5425000F86A55 /* nonce.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E077F720D5424F00F86A55 /* nonce.c */; };
+		21F33F6820E0052F0083D9C0 /* removePotentialJailbreak.c in Sources */ = {isa = PBXBuildFile; fileRef = 21F33F6720E0052F0083D9C0 /* removePotentialJailbreak.c */; };
 		B00730BC20C723AE005995FA /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = B00730BB20C723AE005995FA /* offsets.m */; };
 		B00730C020C730BC005995FA /* README in Resources */ = {isa = PBXBuildFile; fileRef = B00730BF20C730BC005995FA /* README */; };
 		B030E1F620BC0864000CDD4C /* sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = B030E1F520BC0864000CDD4C /* sploit.c */; settings = {COMPILER_FLAGS = "-Wno-unused-variable"; }; };
@@ -62,6 +63,8 @@
 		21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = createSystemSnapshot.plist; sourceTree = "<group>"; };
 		21E077F620D5424F00F86A55 /* nonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nonce.h; sourceTree = "<group>"; };
 		21E077F720D5424F00F86A55 /* nonce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nonce.c; sourceTree = "<group>"; };
+		21F33F6620E0052F0083D9C0 /* removePotentialJailbreak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = removePotentialJailbreak.h; sourceTree = "<group>"; };
+		21F33F6720E0052F0083D9C0 /* removePotentialJailbreak.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = removePotentialJailbreak.c; sourceTree = "<group>"; };
 		B00730BB20C723AE005995FA /* offsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
 		B00730BD20C7273C005995FA /* offsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		B00730BE20C72BCB005995FA /* kmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				F167E3C120C927C0006B956D /* file_utils.h */,
 				F134CC9A20C89D7A00DA1F72 /* apfs_util.c */,
 				F134CC9B20C89D7A00DA1F72 /* apfs_util.h */,
+				21F33F6620E0052F0083D9C0 /* removePotentialJailbreak.h */,
+				21F33F6720E0052F0083D9C0 /* removePotentialJailbreak.c */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				F13A09E020C85E9A00DC838E /* patchfinder64.c in Sources */,
 				F143E0F620C9DF250018A47B /* rootfs_remount.c in Sources */,
 				F19119E620D9FE0F00CA1BB5 /* CSGradientView.m in Sources */,
+				21F33F6820E0052F0083D9C0 /* removePotentialJailbreak.c in Sources */,
 				21A2C41220DAAA14000BA2B2 /* unliberios.c in Sources */,
 				F13A09E720C8603500DC838E /* kutils.c in Sources */,
 				F12FD1F420C876A6006BA4FD /* kexecute.c in Sources */,
