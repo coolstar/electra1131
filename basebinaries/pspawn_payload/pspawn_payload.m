@@ -63,15 +63,7 @@ kern_return_t bootstrap_look_up(mach_port_t port, const char *service, mach_port
 
 mach_port_t jbd_port;
 
-const char* xpcproxy_blacklist[] = {
-    "com.apple.diagnosticd",  // syslog
-    "MTLCompilerService",     // ?_?
-    "mapspushd",              // stupid Apple Maps
-    "OTAPKIAssetTool",        // h_h
-    "cfprefsd",               // o_o
-    "jailbreakd",             // don't inject into jbd since we'd have to call to it
-    NULL
-};
+NSMutableArray *xpcproxy_blacklist = nil;
 
 typedef int (*pspawn_t)(pid_t * pid, const char* path, const posix_spawn_file_actions_t *file_actions, posix_spawnattr_t *attrp, char const* argv[], const char* envp[]);
 
@@ -88,16 +80,22 @@ int fake_posix_spawn_common(pid_t * pid, const char* path, const posix_spawn_fil
             
             const char* startd = argv[1];
             if (startd != NULL) {
-                const char **blacklist = xpcproxy_blacklist;
                 
-                while (*blacklist) {
-                    if (strstr(startd, *blacklist)) {
+                xpcproxy_blacklist = [[NSMutableArray alloc] initWithObjects:
+                                      @"com.apple.diagnosticd",
+                                      @"MTLCompilerService",
+                                      @"mapspushd",
+                                      @"OTAPKIAssetTool",
+                                      @"cfprefsd",
+                                      @"jailbreakd",
+                                      nil];
+                
+                for (NSString *blacklist in xpcproxy_blacklist) {
+                    if (strcmp(startd, [blacklist UTF8String]) == 0) {
                         DEBUGLOG("xpcproxy for '%s' which is in blacklist, not injecting", startd);
                         inject_me = NULL;
-                        break;
+                        continue;
                     }
-                    
-                    ++blacklist;
                 }
             }
         }
