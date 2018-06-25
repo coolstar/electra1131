@@ -6,6 +6,7 @@
 #include "electra_objc.h"
 #include "kmem.h"
 #include "offsets.h"
+#include <sys/sysctl.h>
 
 @interface ViewController ()
 
@@ -19,6 +20,22 @@ static ViewController *currentViewController;
 
 + (instancetype)currentViewController {
     return currentViewController;
+}
+
+
+// thx DoubleH3lix
+
+double uptime(){
+    struct timeval boottime;
+    size_t len = sizeof(boottime);
+    int mib[2] = { CTL_KERN, KERN_BOOTTIME };
+    if( sysctl(mib, 2, &boottime, &len, NULL, 0) < 0 )
+    {
+        return -1.0;
+    }
+    time_t bsec = boottime.tv_sec, csec = time(NULL);
+    
+    return difftime(csec, bsec);
 }
 
 - (void)checkVersion {
@@ -136,6 +153,19 @@ static ViewController *currentViewController;
     BOOL shouldEnableTweaks = [_enableTweaks isOn];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
+        
+        int ut = 0;
+        while ((ut = 50 - uptime()) > 0) {
+            NSString *msg = [NSString stringWithFormat:@"Waiting: %d seconds", ut];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [sender setTitle:msg forState:UIControlStateNormal];
+            });
+            sleep(1);
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [sender setTitle:@"Please Wait (1/3)" forState:UIControlStateNormal];
+        });
         
 #ifdef WANT_VFS
         int exploitstatus = vfs_sploit();
