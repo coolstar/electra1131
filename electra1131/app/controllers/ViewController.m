@@ -1,8 +1,9 @@
 #import "ViewController.h"
 #include "codesign.h"
 #include "electra.h"
-#include "sploit.h"
+#include "multi_path_sploit.h"
 #include "electra_objc.h"
+#include "kmem.h"
 
 @interface ViewController ()
 
@@ -13,8 +14,6 @@ static ViewController *currentViewController;
 @implementation ViewController
 
 #define K_ENABLE_TWEAKS "enableTweaks"
-
-mach_port_t tfp0 = MACH_PORT_NULL;
 
 + (instancetype)currentViewController {
     return currentViewController;
