@@ -13,10 +13,6 @@
         <array key="SFProText-Bold.ttf">
             <string>SFProText-Bold</string>
         </array>
-        <array key="SFUIText.ttf">
-            <string>.SFUIText</string>
-            <string>.SFUIText-Semibold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -60,51 +56,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmq-z1-MS4">
                                         <rect key="frame" x="0.0" y="65" width="214" height="40"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Compatible with">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="15" name="SFProText-Regular"/>
-                                                    <real key="NSKern" value="-0.10000000000000001"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
                                             <fragment>
                                                 <string key="content" base64-UTF8="YES">
 Cg
 </string>
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="15" name="SFProText-Medium"/>
+                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="15" name="SFProText-Regular"/>
                                                     <real key="NSKern" value="-0.10000000000000001"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="iOS 11.2 ">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="16" name="SFProText-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="—">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="16" name="SFProText-Medium"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" 11.3.1">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="16" name="SFProText-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="16" name="SFProText-Bold"/>
-                                                    <real key="NSKern" value="1"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -114,17 +73,17 @@ Cg
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoH-WZ-oqx">
-                                <rect key="frame" x="44" y="425" width="287" height="32"/>
+                                <rect key="frame" x="49.5" y="425" width="276" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brought to you by the " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fC-j2-0wp">
-                                        <rect key="frame" x="0.0" y="0.0" width="168" height="32"/>
-                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="161" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJY-zs-sEX">
-                                        <rect key="frame" x="168" y="0.0" width="119" height="32"/>
-                                        <fontDescription key="fontDescription" name=".SFUIText-Semibold" family=".SF UI Text" pointSize="16"/>
+                                        <rect key="frame" x="161" y="0.0" width="115" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="@Electra_Team">
                                             <color key="titleColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -144,7 +103,7 @@ Cg
                                             <constraint firstAttribute="width" constant="300" id="KxP-El-C5i"/>
                                             <constraint firstAttribute="height" constant="50" id="iuB-vI-mzP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name=".SFUIText-Semibold" family=".SF UI Text" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="Credits">
                                             <color key="titleColor" red="0.25630999999999998" green="0.30879000000000001" blue="0.38431999999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -172,8 +131,8 @@ Cg
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="UAb-4G-vmf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name=".SFUIText-Semibold" family=".SF UI Text" pointSize="18"/>
-                                                <color key="textColor" red="0.23977999999999999" green="0.24639" blue="0.29804000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <color key="textColor" red="0.25630999999999998" green="0.30879000000000001" blue="0.38431999999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

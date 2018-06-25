@@ -621,6 +621,8 @@
 					"$(PROJECT_DIR)/electra1131",
 					"$(PROJECT_DIR)/electra1131/libs",
 				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
@@ -649,6 +651,8 @@
 					"$(PROJECT_DIR)/electra1131",
 					"$(PROJECT_DIR)/electra1131/libs",
 				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
