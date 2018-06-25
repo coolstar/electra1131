@@ -31,7 +31,7 @@
                                 <rect key="frame" x="103.5" y="110" width="168" height="43"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-Se-ZOo">
-                                <rect key="frame" x="80.5" y="246" width="214" height="105"/>
+                                <rect key="frame" x="80.5" y="245.5" width="214" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fB9-4u-Bfa">
                                         <rect key="frame" x="0.0" y="0.0" width="214" height="55"/>
@@ -53,18 +53,16 @@
                                             <action selector="doit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fvx-ml-wJd"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmq-z1-MS4">
-                                        <rect key="frame" x="0.0" y="65" width="214" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="742-v6-jJT">
+                                        <rect key="frame" x="0.0" y="65" width="214" height="41"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content" base64-UTF8="YES">
 Cg
 </string>
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.99999000000000005" blue="0.99999000000000005" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="15" name="SFProText-Regular"/>
-                                                    <real key="NSKern" value="-0.10000000000000001"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -186,14 +184,14 @@ Cg
                         <outlet property="_jailbreakButtonStackView" destination="jPt-Se-ZOo" id="20W-s8-uXI"/>
                         <outlet property="_logoView" destination="tZ9-9J-VWS" id="e3b-K0-L8V"/>
                         <outlet property="_tweaksContainerView" destination="tFy-KQ-Zk5" id="poO-LU-IdI"/>
-                        <outlet property="compatibilityLabel" destination="lmq-z1-MS4" id="JEY-nE-Rdl"/>
+                        <outlet property="compatibilityLabel" destination="742-v6-jJT" id="p1S-XL-d8O"/>
                         <outlet property="enableTweaks" destination="Ggt-pB-Zy0" id="6p8-EF-Uec"/>
                         <outlet property="jailbreak" destination="fB9-4u-Bfa" id="Qhc-Ja-xmU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="31.773399014778327"/>
+            <point key="canvasLocation" x="28" y="31.03448275862069"/>
         </scene>
     </scenes>
     <resources>
