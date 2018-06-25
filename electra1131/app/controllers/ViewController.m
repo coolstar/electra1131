@@ -2,6 +2,7 @@
 #include "codesign.h"
 #include "electra.h"
 #include "multi_path_sploit.h"
+#include "vfs_sploit.h"
 #include "electra_objc.h"
 #include "kmem.h"
 
@@ -114,9 +115,16 @@ static ViewController *currentViewController;
     [sender setTitle:@"Please Wait (1/3)" forState:UIControlStateNormal];
     
     BOOL shouldEnableTweaks = [_enableTweaks isOn];
+    BOOL shouldUseAlternativeExploit = YES;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
-        kern_return_t ret = multi_path_go();
+        kern_return_t ret = KERN_FAILURE;
+        
+        if (shouldUseAlternativeExploit == YES) {
+            ret = multi_path_go();
+        } else {
+            ret = vfs_sploit();
+        }
         
         if (ret != KERN_SUCCESS) {
             dispatch_async(dispatch_get_main_queue(), ^{
