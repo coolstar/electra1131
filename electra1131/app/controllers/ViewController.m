@@ -5,6 +5,7 @@
 #include "vfs_sploit.h"
 #include "electra_objc.h"
 #include "kmem.h"
+#include "offsets.h"
 
 @interface ViewController ()
 
@@ -48,12 +49,29 @@ static ViewController *currentViewController;
     
     BOOL enable3DTouch = YES;
     
-    if (kCFCoreFoundationVersionNumber < 1445.32 || kCFCoreFoundationVersionNumber > 1452.23){
-        [_jailbreak setEnabled:NO];
-        [_enableTweaks setEnabled:NO];
-        [_jailbreak setTitle:@"Version Error" forState:UIControlStateNormal];
-        
-        enable3DTouch = NO;
+    int offsetstatus = offsets_init();
+    
+    switch (offsetstatus) {
+        case ERR_NOERR: {
+            break;
+        }
+        case ERR_VERSION: {
+            [_jailbreak setEnabled:NO];
+            [_enableTweaks setEnabled:NO];
+            [_jailbreak setTitle:@"Version Error" forState:UIControlStateNormal];
+            
+            enable3DTouch = NO;
+            break;
+        }
+            
+        default: {
+            [_jailbreak setEnabled:NO];
+            [_enableTweaks setEnabled:NO];
+            [_jailbreak setTitle:@"Error: offsets" forState:UIControlStateNormal];
+            
+            enable3DTouch = NO;
+            break;
+        }
     }
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -67,13 +85,13 @@ static ViewController *currentViewController;
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     
-    if ((flags & CS_PLATFORM_BINARY)){
+    if ((flags & CS_PLATFORM_BINARY)) {
         [_jailbreak setEnabled:NO];
         [_enableTweaks setEnabled:NO];
         [_jailbreak setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
         enable3DTouch = NO;
     }
-    if (enable3DTouch){
+    if (enable3DTouch) {
         [notificationCenter addObserver:self selector:@selector(doit:) name:@"Jailbreak" object:nil];
     }
     
@@ -117,62 +135,91 @@ static ViewController *currentViewController;
     BOOL shouldEnableTweaks = [_enableTweaks isOn];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
-        kern_return_t ret = KERN_FAILURE;
         
 #ifdef WANT_VFS
-        ret = vfs_sploit();
+        int exploitstatus = vfs_sploit();
 #else /* !WANT_VFS */
-        ret = multi_path_go();
+        int exploitstatus = multi_path_go();
 #endif /* !WANT_VFS */
         
-        if (ret != KERN_SUCCESS) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Error: exploit" forState:UIControlStateNormal];
-            });
-            return;
+        switch (exploitstatus) {
+            case ERR_NOERR: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
+                });
+                break;
+            }
+            case ERR_EXPLOIT: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error: exploit" forState:UIControlStateNormal];
+                });
+                return;
+            }
+            case ERR_UNSUPPORTED: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error: unsupported" forState:UIControlStateNormal];
+                });
+                return;
+            }
+            default:
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error Exploiting" forState:UIControlStateNormal];
+                });
+                return;
         }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [sender setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
-        });
         
         int jailbreakstatus = start_electra(tfp0, shouldEnableTweaks);
         
-        if (jailbreakstatus == ERR_NOERR){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Jailbroken" forState:UIControlStateNormal];
-                
-                UIAlertController *openSSHRunning = [UIAlertController alertControllerWithTitle:@"OpenSSH Running" message:@"OpenSSH is now running! Enjoy." preferredStyle:UIAlertControllerStyleAlert];
-                [openSSHRunning addAction:[UIAlertAction actionWithTitle:@"Exit" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                    [openSSHRunning dismissViewControllerAnimated:YES completion:nil];
-                    exit(0);
-                }]];
-                [self presentViewController:openSSHRunning animated:YES completion:nil];
-            });
-        } else if (jailbreakstatus == ERR_TFP0) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Error: tfp0" forState:UIControlStateNormal];
-            });
-        } else if (jailbreakstatus == ERR_ALREADY_JAILBROKEN) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
-            });
-        } else if (jailbreakstatus == ERR_AMFID_PATCH) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Error: amfid patch" forState:UIControlStateNormal];
-            });
-        }  else if (jailbreakstatus == ERR_ROOTFS_REMOUNT) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Error: rootfs remount" forState:UIControlStateNormal];
-            });
-        } else if (jailbreakstatus == ERR_SNAPSHOT) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Error: snapshot failed" forState:UIControlStateNormal];
-            });
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:@"Error Jailbreaking" forState:UIControlStateNormal];
-            });
+        switch (jailbreakstatus) {
+            case ERR_NOERR: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Jailbroken" forState:UIControlStateNormal];
+                    
+                    UIAlertController *openSSHRunning = [UIAlertController alertControllerWithTitle:@"OpenSSH Running" message:@"OpenSSH is now running! Enjoy." preferredStyle:UIAlertControllerStyleAlert];
+                    [openSSHRunning addAction:[UIAlertAction actionWithTitle:@"Exit" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                        [openSSHRunning dismissViewControllerAnimated:YES completion:nil];
+                        exit(0);
+                    }]];
+                    [self presentViewController:openSSHRunning animated:YES completion:nil];
+                });
+                break;
+            }
+            case ERR_TFP0: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error: tfp0" forState:UIControlStateNormal];
+                });
+                break;
+            }
+            case ERR_ALREADY_JAILBROKEN: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
+                });
+                break;
+            }
+            case ERR_AMFID_PATCH: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error: amfid patch" forState:UIControlStateNormal];
+                });
+                break;
+            }
+            case ERR_ROOTFS_REMOUNT: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error: rootfs remount" forState:UIControlStateNormal];
+                });
+                break;
+            }
+            case ERR_SNAPSHOT: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error: snapshot failed" forState:UIControlStateNormal];
+                });
+                break;
+            }
+            default: {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sender setTitle:@"Error Jailbreaking" forState:UIControlStateNormal];
+                });
+                break;
+            }
         }
         
         NSLog(@" ♫ KPP never bothered me anyway... ♫ ");
