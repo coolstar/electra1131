@@ -7,6 +7,7 @@
 #include "kmem.h"
 #include "offsets.h"
 #include <sys/sysctl.h>
+#include "file_utils.h"
 
 @interface ViewController ()
 
@@ -22,7 +23,6 @@ static ViewController *currentViewController;
 + (instancetype)currentViewController {
     return currentViewController;
 }
-
 
 // thx DoubleH3lix
 
@@ -90,14 +90,14 @@ double uptime(){
             break;
         }
         case ERR_VERSION: {
-            postProgress(@"Version Error");
+            [_jailbreak setTitle:@"Version Error" forState:UIControlStateNormal];
             
             enable3DTouch = NO;
             break;
         }
             
         default: {
-            postProgress(@"Error: offsets");
+            [_jailbreak setTitle:@"Error: offsets" forState:UIControlStateNormal];
             
             enable3DTouch = NO;
             break;
@@ -112,11 +112,15 @@ double uptime(){
     BOOL enableTweaks = [userDefaults boolForKey:@K_ENABLE_TWEAKS];
     [_enableTweaks setOn:enableTweaks];
     
+    if (file_exists("/.bootstrapped_electra")) {
+        [_jailbreak setTitle:@"Enable Jailbreak" forState:UIControlStateNormal];
+    }
+    
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     
     if ((flags & CS_PLATFORM_BINARY)) {
-        postProgress(@"Already Jailbroken");
+        [_jailbreak setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
         enable3DTouch = NO;
     }
     if (enable3DTouch) {

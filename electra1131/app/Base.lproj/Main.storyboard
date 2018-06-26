@@ -52,10 +52,10 @@
                                         <rect key="frame" x="0.0" y="65" width="214" height="41"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content" base64-UTF8="YES">
-Cg
-</string>
+                                                <string key="content">&lt;placeholder&gt;
+&lt;placeholder&gt;</string>
                                                 <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
