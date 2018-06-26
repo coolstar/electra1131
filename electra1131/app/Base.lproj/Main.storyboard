@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-vM-HNw" customClass="CSGradientView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="tZ9-9J-VWS">
@@ -187,11 +187,16 @@
                                     <constraint firstItem="tFy-KQ-Zk5" firstAttribute="top" secondItem="5QN-ZM-Myu" secondAttribute="top" constant="45" id="eA0-ZR-1vx"/>
                                     <constraint firstItem="dbk-ev-Bdv" firstAttribute="trailing" secondItem="tFy-KQ-Zk5" secondAttribute="trailing" id="jtm-UX-xNq"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="h2M-vM-HNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0nK-KL-9Kh"/>
-                            <constraint firstItem="5QN-ZM-Myu" firstAttribute="top" secondItem="h2M-vM-HNw" secondAttribute="bottom" id="9tE-vZ-TUr"/>
+                            <constraint firstItem="5QN-ZM-Myu" firstAttribute="top" secondItem="h2M-vM-HNw" secondAttribute="bottom" constant="-200" id="9tE-vZ-TUr"/>
                             <constraint firstItem="jPt-Se-ZOo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-35" id="Bgp-Ij-aIP"/>
                             <constraint firstItem="5QN-ZM-Myu" firstAttribute="top" secondItem="DoH-WZ-oqx" secondAttribute="bottom" constant="10" id="NC7-aP-HBh"/>
                             <constraint firstItem="5QN-ZM-Myu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rpm-wp-Xqb"/>
@@ -221,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="31.03448275862069"/>
+            <point key="canvasLocation" x="26.25" y="30.633802816901408"/>
         </scene>
     </scenes>
     <resources>

@@ -49,6 +49,7 @@ double uptime(){
         NSLog(@"Progress: %@",prog);
         [_jailbreak setEnabled:NO];
         [_enableTweaks setEnabled:NO];
+        [_setGenerator setEnabled:NO];
         [_jailbreak setTitle:prog forState:UIControlStateNormal];
     });
 }
