@@ -20,6 +20,9 @@ static ViewController *currentViewController;
 
 #define postProgress(prg) [[NSNotificationCenter defaultCenter] postNotificationName: @"JB" object:nil userInfo:@{@"JBProgress": prg}]
 
+#define K_ENABLE_TWEAKS "enableTweaks"
+#define K_GENERATOR "generator"
+
 + (instancetype)currentViewController {
     return currentViewController;
 }
@@ -251,18 +254,40 @@ double uptime(){
         NSLog(@" ♫ KPP never bothered me anyway... ♫ ");
     });
 }
+
 - (IBAction)tappedOnSetGenerator:(id)sender {
+    __block NSString *generatorToSet = nil;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Set the system boot nonce on jailbreak" message:@"Enter the generator for the nonce you want the system to generate on boot" preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSString *generator = alertController.textFields.firstObject.text;
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:generator forKey:@K_GENERATOR];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Set" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+         const char *generatorInput = [alertController.textFields.firstObject.text UTF8String];
+         char compareString[22];
+         uint64_t rawGeneratorValue;
+         sscanf(generatorInput, "0x%16llx",&rawGeneratorValue);
+         sprintf(compareString, "0x%016llx", rawGeneratorValue);
+         if(strcmp(compareString, generatorInput) != 0) {
+             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to validate generator" preferredStyle:UIAlertControllerStyleAlert];
+             [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+             [self presentViewController:alertController animated:YES completion:nil];
+             return;
+         }
+        generatorToSet = [NSString stringWithUTF8String:generatorInput];
+        [userDefaults setObject:generatorToSet forKey:@K_GENERATOR];
         [userDefaults synchronize];
-        NSLog(@"Generator to set: %@", [userDefaults objectForKey:@K_GENERATOR]);
-    }]];
+        uint32_t flags;
+        csops(getpid(), CS_OPS_STATUS, &flags, 0);
+        UIAlertController *alertController = nil;
+        if ((flags & CS_PLATFORM_BINARY)) {
+            alertController = [UIAlertController alertControllerWithTitle:@"Notice" message:@"The system boot nonce will be set the next time you enable your jailbreak" preferredStyle:UIAlertControllerStyleAlert];
+        } else {
+            alertController = [UIAlertController alertControllerWithTitle:@"Notice" message:@"The system boot nonce will be set once you enable the jailbreak" preferredStyle:UIAlertControllerStyleAlert];
+        }
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+     }]];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = [NSString stringWithFormat:@"Generator to set: %s", genToSet()];
+        textField.placeholder = [NSString stringWithFormat:@"%s", genToSet()];
     }];
     [self presentViewController:alertController animated:YES completion:nil];
 }
