@@ -90,6 +90,8 @@ double uptime(){
             break;
         }
         case ERR_VERSION: {
+            [_jailbreak setEnabled:NO];
+            [_enableTweaks setEnabled:NO];
             [_jailbreak setTitle:@"Version Error" forState:UIControlStateNormal];
             
             enable3DTouch = NO;
@@ -97,6 +99,8 @@ double uptime(){
         }
             
         default: {
+            [_jailbreak setEnabled:NO];
+            [_enableTweaks setEnabled:NO];
             [_jailbreak setTitle:@"Error: offsets" forState:UIControlStateNormal];
             
             enable3DTouch = NO;
@@ -120,7 +124,10 @@ double uptime(){
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     
     if ((flags & CS_PLATFORM_BINARY)) {
+        [_jailbreak setEnabled:NO];
+        [_enableTweaks setEnabled:NO];
         [_jailbreak setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
+        
         enable3DTouch = NO;
     }
     if (enable3DTouch) {
