@@ -113,8 +113,6 @@ double uptime(){
         [notificationCenter addObserver:self selector:@selector(doit:) name:@"Jailbreak" object:nil];
     }
     
-    [_jailbreak.titleLabel setFont:[UIFont systemFontOfSize:20 weight:UIFontWeightBold]];
-    
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"Compatible with\niOS 11.2 — 11.3.1 "];
     [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15 weight:UIFontWeightRegular] range:NSMakeRange(0, 15)];
     [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.3f] range:NSMakeRange(0, 15)];
