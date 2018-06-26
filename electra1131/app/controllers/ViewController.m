@@ -8,6 +8,7 @@
 #include "offsets.h"
 #include <sys/sysctl.h>
 #include "file_utils.h"
+#include "electra_objc.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,6 @@ static ViewController *currentViewController;
 @implementation ViewController
 
 #define postProgress(prg) [[NSNotificationCenter defaultCenter] postNotificationName: @"JB" object:nil userInfo:@{@"JBProgress": prg}]
-#define K_ENABLE_TWEAKS "enableTweaks"
 
 + (instancetype)currentViewController {
     return currentViewController;
@@ -250,6 +250,21 @@ double uptime(){
         
         NSLog(@" ♫ KPP never bothered me anyway... ♫ ");
     });
+}
+- (IBAction)tappedOnSetGenerator:(id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Set the system boot nonce on jailbreak" message:@"Enter the generator for the nonce you want the system to generate on boot" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *generator = alertController.textFields.firstObject.text;
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:generator forKey:@K_GENERATOR];
+        [userDefaults synchronize];
+        NSLog(@"Generator to set: %@", [userDefaults objectForKey:@K_GENERATOR]);
+    }]];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = [NSString stringWithFormat:@"Generator: %s", genToSet()];
+    }];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 NSString *_urlForUsername(NSString *user) {
