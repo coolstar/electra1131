@@ -83,9 +83,7 @@ double uptime(){
     
     BOOL enable3DTouch = YES;
     
-    int offsetstatus = offsets_init();
-    
-    switch (offsetstatus) {
+    switch (offsets_init()) {
         case ERR_NOERR: {
             break;
         }
