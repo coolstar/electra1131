@@ -16,6 +16,7 @@ static ViewController *currentViewController;
 
 @implementation ViewController
 
+#define postProgress(prg) [[NSNotificationCenter defaultCenter] postNotificationName: @"JB" object:nil userInfo:@{@"JBProgress": prg}]
 #define K_ENABLE_TWEAKS "enableTweaks"
 
 + (instancetype)currentViewController {
@@ -36,6 +37,17 @@ double uptime(){
     time_t bsec = boottime.tv_sec, csec = time(NULL);
     
     return difftime(csec, bsec);
+}
+
+-(void)updateProgressFromNotification:(id)sender{
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        NSString *prog=[sender userInfo][@"JBProgress"];
+        NSLog(@"Progress: %@",prog);
+        [_jailbreak setEnabled:NO];
+        [_enableTweaks setEnabled:NO];
+        [_jailbreak setTitle:prog forState:UIControlStateNormal];
+    });
 }
 
 - (void)checkVersion {
@@ -60,6 +72,7 @@ double uptime(){
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgressFromNotification:) name:@"JB" object:nil];
     
 #if ELECTRADEBUG
 #else  /* !ELECTRADEBUG */
@@ -77,18 +90,14 @@ double uptime(){
             break;
         }
         case ERR_VERSION: {
-            [_jailbreak setEnabled:NO];
-            [_enableTweaks setEnabled:NO];
-            [_jailbreak setTitle:@"Version Error" forState:UIControlStateNormal];
+            postProgress(@"Version Error");
             
             enable3DTouch = NO;
             break;
         }
             
         default: {
-            [_jailbreak setEnabled:NO];
-            [_enableTweaks setEnabled:NO];
-            [_jailbreak setTitle:@"Error: offsets" forState:UIControlStateNormal];
+            postProgress(@"Error: offsets");
             
             enable3DTouch = NO;
             break;
@@ -107,9 +116,7 @@ double uptime(){
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     
     if ((flags & CS_PLATFORM_BINARY)) {
-        [_jailbreak setEnabled:NO];
-        [_enableTweaks setEnabled:NO];
-        [_jailbreak setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
+        postProgress(@"Already Jailbroken");
         enable3DTouch = NO;
     }
     if (enable3DTouch) {
@@ -149,7 +156,7 @@ double uptime(){
     
     currentViewController = self;
     
-    [sender setTitle:@"Please Wait (1/3)" forState:UIControlStateNormal];
+    postProgress(@"Please Wait (1/3)");
     
     BOOL shouldEnableTweaks = [_enableTweaks isOn];
     
@@ -158,14 +165,12 @@ double uptime(){
         int ut = 0;
         while ((ut = 50 - uptime()) > 0) {
             NSString *msg = [NSString stringWithFormat:@"Waiting: %d seconds", ut];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [sender setTitle:msg forState:UIControlStateNormal];
-            });
+            postProgress(msg);
             sleep(1);
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [sender setTitle:@"Please Wait (1/3)" forState:UIControlStateNormal];
+            postProgress(@"Please Wait (1/3)");
         });
         
 #if WANT_VFS
@@ -176,27 +181,19 @@ double uptime(){
         
         switch (exploitstatus) {
             case ERR_NOERR: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
-                });
+                postProgress(@"Please Wait (2/3)");
                 break;
             }
             case ERR_EXPLOIT: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error: exploit" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error: exploit");
                 return;
             }
             case ERR_UNSUPPORTED: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error: unsupported" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error: unsupported");
                 return;
             }
             default:
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error Exploiting" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error Exploiting");
                 return;
         }
         
@@ -205,7 +202,7 @@ double uptime(){
         switch (jailbreakstatus) {
             case ERR_NOERR: {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Jailbroken" forState:UIControlStateNormal];
+                    postProgress(@"Jailbroken");
                     
                     UIAlertController *openSSHRunning = [UIAlertController alertControllerWithTitle:@"OpenSSH Running" message:@"OpenSSH is now running! Enjoy." preferredStyle:UIAlertControllerStyleAlert];
                     [openSSHRunning addAction:[UIAlertAction actionWithTitle:@"Exit" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -217,39 +214,27 @@ double uptime(){
                 break;
             }
             case ERR_TFP0: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error: tfp0" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error: tfp0");
                 break;
             }
             case ERR_ALREADY_JAILBROKEN: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
-                });
+                postProgress(@"Already Jailbroken");
                 break;
             }
             case ERR_AMFID_PATCH: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error: amfid patch" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error: amfid patch");
                 break;
             }
             case ERR_ROOTFS_REMOUNT: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error: rootfs remount" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error: rootfs remount");
                 break;
             }
             case ERR_SNAPSHOT: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error: snapshot failed" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error: snapshot failed");
                 break;
             }
             default: {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [sender setTitle:@"Error Jailbreaking" forState:UIControlStateNormal];
-                });
+                postProgress(@"Error Jailbreaking");
                 break;
             }
         }
@@ -285,29 +270,23 @@ NSString *_urlForUsername(NSString *user) {
 }
 
 - (void)removingLiberiOS {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [_jailbreak setTitle:@"Removing liberiOS" forState:UIControlStateNormal];
-    });
+    postProgress(@"Removing liberiOS");
 }
 
 - (void)installingCydia {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [_jailbreak setTitle:@"Installing Cydia" forState:UIControlStateNormal];
-    });
+    postProgress(@"Installing Cydia");
 }
 
 - (void)cydiaDone {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [_jailbreak setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
-    });
+    postProgress(@"Please Wait (2/3)");
 }
 
 - (void)displaySnapshotNotice {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_jailbreak setTitle:@"user prompt" forState:UIControlStateNormal];
+        postProgress(@"user prompt");
         UIAlertController *apfsNoticeController = [UIAlertController alertControllerWithTitle:@"APFS Snapshot Created" message:@"An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future." preferredStyle:UIAlertControllerStyleAlert];
         [apfsNoticeController addAction:[UIAlertAction actionWithTitle:@"Continue Jailbreak" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_jailbreak setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
+            postProgress(@"Please Wait (2/3)");
             snapshotWarningRead();
         }]];
         [self presentViewController:apfsNoticeController animated:YES completion:nil];
@@ -316,10 +295,10 @@ NSString *_urlForUsername(NSString *user) {
 
 - (void)displaySnapshotWarning {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_jailbreak setTitle:@"user prompt" forState:UIControlStateNormal];
+        postProgress(@"user prompt");
         UIAlertController *apfsWarningController = [UIAlertController alertControllerWithTitle:@"APFS Snapshot Not Found" message:@"Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot." preferredStyle:UIAlertControllerStyleAlert];
         [apfsWarningController addAction:[UIAlertAction actionWithTitle:@"Continue Jailbreak" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_jailbreak setTitle:@"Please Wait (2/3)" forState:UIControlStateNormal];
+            postProgress(@"Please Wait (2/3)");
             snapshotWarningRead();
         }]];
         [self presentViewController:apfsWarningController animated:YES completion:nil];
