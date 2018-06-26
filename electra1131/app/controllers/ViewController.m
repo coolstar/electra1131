@@ -262,7 +262,7 @@ double uptime(){
         NSLog(@"Generator to set: %@", [userDefaults objectForKey:@K_GENERATOR]);
     }]];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = [NSString stringWithFormat:@"Generator: %s", genToSet()];
+        textField.placeholder = [NSString stringWithFormat:@"Generator to set: %s", genToSet()];
     }];
     [self presentViewController:alertController animated:YES completion:nil];
 }
