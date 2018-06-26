@@ -61,7 +61,10 @@ double uptime(){
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[self checkVersion];
+#if ELECTRADEBUG
+#else  /* !ELECTRADEBUG */
+    [self checkVersion];
+#endif /* !ELECTRADEBUG */
     
     NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
     
@@ -165,7 +168,7 @@ double uptime(){
             [sender setTitle:@"Please Wait (1/3)" forState:UIControlStateNormal];
         });
         
-#ifdef WANT_VFS
+#if WANT_VFS
         int exploitstatus = vfs_sploit();
 #else /* !WANT_VFS */
         int exploitstatus = multi_path_go();
