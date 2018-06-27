@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  electra1131
+
+  Created by Pwn20wnd on 6/27/18.
+  Copyright © 2018 Electra Team. All rights reserved.
+*/
+
+"Jailbreak" = "Jailbreak";
+"Brought to you by the " = "Brought to you by the ";
+"Tweaks" = "Tweaks";
+"Credits" = "Credits";
+"Set Generator" = "Set Generator";
+"Update Available!" = "Update Available!";
+"An update for Electra is available! Please visit %@ on a computer to download the latest IPA!" = "An update for Electra is available! Please visit %@ on a computer to download the latest IPA!";
+"Version Error" = "Version Error";
+"Error: offsets" = "Error: offsets";
+"Enable Jailbreak" = "Enable Jailbreak";
+"Already Jailbroken" = "Already Jailbroken";
+"Compatible with" = "Compatible with";
+"Credits" = "Credits";
+"Thanks to CoolStar, Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29" = "Thanks to CoolStar, Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29";
+"OK" = "OK";
+"Please Wait (1/3)" = "Please Wait (1/3)";
+"Waiting: %d seconds" = "Waiting: %d seconds";
+"Please Wait (2/3)" = "Please Wait (2/3)";
+"Error: exploit" = "Error: exploit";
+"Error: unsupported" = "Error: unsupported";
+"Error Exploiting" = "Error Exploiting";
+"Jailbroken" = "Jailbroken";
+"OpenSSH Running" = "OpenSSH Running";
+"OpenSSH is now running! Enjoy." = "OpenSSH is now running! Enjoy.";
+"Error: tfp0" = "Error: tfp0";
+"Already Jailbroken" = "Already Jailbroken";
+"Error: amfid patch" = "Error: amfid patch";
+"Error: rootfs remount" = "Error: rootfs remount";
+"Error: snapshot failed" = "Error: snapshot failed";
+"Error Jailbreaking" = "Error Jailbreaking";
+"Set the system boot nonce on jailbreak" = "Set the system boot nonce on jailbreak";
+"Enter the generator for the nonce you want the system to generate on boot" = "Enter the generator for the nonce you want the system to generate on boot";
+"Cancel" = "Cancel";
+"Set" = "Set";
+"Error" = "Error";
+"Failed to validate generator" = "Failed to validate generator";
+"Notice" = "Notice";
+"The system boot nonce will be set the next time you enable your jailbreak" = "The system boot nonce will be set the next time you enable your jailbreak";
+"The system boot nonce will be set once you enable the jailbreak" = "The system boot nonce will be set once you enable the jailbreak";
+"Removing liberiOS" = "Removing liberiOS";
+"Installing Cydia" = "Installing Cydia";
+"APFS Snapshot Created" = "APFS Snapshot Created";
+"An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future." = "An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future.";
+"Continue Jailbreak" = "Continue Jailbreak";
+"APFS Snapshot Not Found" = "APFS Snapshot Not Found";
+"Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot." = "Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot.";

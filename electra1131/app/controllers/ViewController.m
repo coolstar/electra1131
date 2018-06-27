@@ -9,6 +9,7 @@
 #include <sys/sysctl.h>
 #include "file_utils.h"
 #include "electra_objc.h"
+#include "localize.h"
 
 @interface ViewController ()
 
@@ -20,6 +21,7 @@ static ViewController *currentViewController;
 
 #define postProgress(prg) [[NSNotificationCenter defaultCenter] postNotificationName: @"JB" object:nil userInfo:@{@"JBProgress": prg}]
 
+#define ELECTRA_URL "https://coolstar.org/electra/"
 #define K_ENABLE_TWEAKS "enableTweaks"
 #define K_GENERATOR "generator"
 
@@ -66,8 +68,8 @@ double uptime(){
         
         if (![gitHistory containsObject:gitCommit]){
             dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Update Available!" message:@"An update for Electra is available! Please visit https://coolstar.org/electra/ on a computer to download the latest IPA!" preferredStyle:UIAlertControllerStyleAlert];
-                [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Update Available!" message:[NSString stringWithFormat:localize(@"An update for Electra is available! Please visit %@ on a computer to download the latest IPA!"), @ELECTRA_URL] preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
                 [self presentViewController:alertController animated:YES completion:nil];
             });
         }
@@ -94,7 +96,7 @@ double uptime(){
         case ERR_VERSION: {
             [_jailbreak setEnabled:NO];
             [_enableTweaks setEnabled:NO];
-            [_jailbreak setTitle:@"Version Error" forState:UIControlStateNormal];
+            [_jailbreak setTitle:localize(@"Version Error") forState:UIControlStateNormal];
             
             enable3DTouch = NO;
             break;
@@ -103,7 +105,7 @@ double uptime(){
         default: {
             [_jailbreak setEnabled:NO];
             [_enableTweaks setEnabled:NO];
-            [_jailbreak setTitle:@"Error: offsets" forState:UIControlStateNormal];
+            [_jailbreak setTitle:localize(@"Error: offsets") forState:UIControlStateNormal];
             
             enable3DTouch = NO;
             break;
@@ -119,7 +121,7 @@ double uptime(){
     [_enableTweaks setOn:enableTweaks];
     
     if (file_exists("/.bootstrapped_electra")) {
-        [_jailbreak setTitle:@"Enable Jailbreak" forState:UIControlStateNormal];
+        [_jailbreak setTitle:localize(@"Enable Jailbreak") forState:UIControlStateNormal];
     }
     
     uint32_t flags;
@@ -128,7 +130,7 @@ double uptime(){
     if ((flags & CS_PLATFORM_BINARY)) {
         [_jailbreak setEnabled:NO];
         [_enableTweaks setEnabled:NO];
-        [_jailbreak setTitle:@"Already Jailbroken" forState:UIControlStateNormal];
+        [_jailbreak setTitle:localize(@"Already Jailbroken") forState:UIControlStateNormal];
         
         enable3DTouch = NO;
     }
@@ -136,17 +138,16 @@ double uptime(){
         [notificationCenter addObserver:self selector:@selector(doit:) name:@"Jailbreak" object:nil];
     }
     
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"Compatible with\niOS 11.2 — 11.3.1 "];
-    [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15 weight:UIFontWeightRegular] range:NSMakeRange(0, 15)];
-    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.3f] range:NSMakeRange(0, 15)];
-    [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:NSMakeRange(15, 11)];
-    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:NSMakeRange(15, 11)];
-    [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightMedium] range:NSMakeRange(26, 1)];
-    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:NSMakeRange(26, 1)];
-    [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:NSMakeRange(27, 7)];
-    [string addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:NSMakeRange(27, 7)];
+    NSString *string = [NSString stringWithFormat:@"%@\niOS 11.2 — 11.3.1 ", localize(@"Compatible with")];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15 weight:UIFontWeightRegular] range:[string rangeOfString:@"Compatible with"]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.3f] range:[string rangeOfString:@"Compatible with"]];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:[string rangeOfString:@"iOS 11.2 "]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:[string rangeOfString:@"iOS 11.2 "]];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:[string rangeOfString:@" 11.3.1 "]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:[string rangeOfString:@" 11.3.1 "]];
     
-    [_compatibilityLabel setAttributedText:string];
+    [_compatibilityLabel setAttributedText:attributedString];
     
   // Do any additional setup after loading the view, typically from a nib.
 }
@@ -158,8 +159,8 @@ double uptime(){
 }
 
 - (IBAction)credits:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:@"Thanks to CoolStar, Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29" preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Credits") message:localize(@"Thanks to CoolStar, Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29") preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -169,7 +170,7 @@ double uptime(){
     
     currentViewController = self;
     
-    postProgress(@"Please Wait (1/3)");
+    postProgress(localize(@"Please Wait (1/3)"));
     
     BOOL shouldEnableTweaks = [_enableTweaks isOn];
     
@@ -177,13 +178,13 @@ double uptime(){
         
         int ut = 0;
         while ((ut = 50 - uptime()) > 0) {
-            NSString *msg = [NSString stringWithFormat:@"Waiting: %d seconds", ut];
+            NSString *msg = [NSString stringWithFormat:localize(@"Waiting: %d seconds"), ut];
             postProgress(msg);
             sleep(1);
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            postProgress(@"Please Wait (1/3)");
+            postProgress(localize(@"Please Wait (1/3)"));
         });
         
 #if WANT_VFS
@@ -194,19 +195,19 @@ double uptime(){
         
         switch (exploitstatus) {
             case ERR_NOERR: {
-                postProgress(@"Please Wait (2/3)");
+                postProgress(localize(@"Please Wait (2/3)"));
                 break;
             }
             case ERR_EXPLOIT: {
-                postProgress(@"Error: exploit");
+                postProgress(localize(@"Error: exploit"));
                 return;
             }
             case ERR_UNSUPPORTED: {
-                postProgress(@"Error: unsupported");
+                postProgress(localize(@"Error: unsupported"));
                 return;
             }
             default:
-                postProgress(@"Error Exploiting");
+                postProgress(localize(@"Error Exploiting"));
                 return;
         }
         
@@ -215,10 +216,10 @@ double uptime(){
         switch (jailbreakstatus) {
             case ERR_NOERR: {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    postProgress(@"Jailbroken");
+                    postProgress(localize(@"Jailbroken"));
                     
-                    UIAlertController *openSSHRunning = [UIAlertController alertControllerWithTitle:@"OpenSSH Running" message:@"OpenSSH is now running! Enjoy." preferredStyle:UIAlertControllerStyleAlert];
-                    [openSSHRunning addAction:[UIAlertAction actionWithTitle:@"Exit" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    UIAlertController *openSSHRunning = [UIAlertController alertControllerWithTitle:localize(@"OpenSSH Running") message:localize(@"OpenSSH is now running! Enjoy.") preferredStyle:UIAlertControllerStyleAlert];
+                    [openSSHRunning addAction:[UIAlertAction actionWithTitle:localize(@"Exit") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                         [openSSHRunning dismissViewControllerAnimated:YES completion:nil];
                         exit(0);
                     }]];
@@ -227,27 +228,27 @@ double uptime(){
                 break;
             }
             case ERR_TFP0: {
-                postProgress(@"Error: tfp0");
+                postProgress(localize(@"Error: tfp0"));
                 break;
             }
             case ERR_ALREADY_JAILBROKEN: {
-                postProgress(@"Already Jailbroken");
+                postProgress(localize(@"Already Jailbroken"));
                 break;
             }
             case ERR_AMFID_PATCH: {
-                postProgress(@"Error: amfid patch");
+                postProgress(localize(@"Error: amfid patch"));
                 break;
             }
             case ERR_ROOTFS_REMOUNT: {
-                postProgress(@"Error: rootfs remount");
+                postProgress(localize(@"Error: rootfs remount"));
                 break;
             }
             case ERR_SNAPSHOT: {
-                postProgress(@"Error: snapshot failed");
+                postProgress(localize(@"Error: snapshot failed"));
                 break;
             }
             default: {
-                postProgress(@"Error Jailbreaking");
+                postProgress(localize(@"Error Jailbreaking"));
                 break;
             }
         }
@@ -259,17 +260,17 @@ double uptime(){
 - (IBAction)tappedOnSetGenerator:(id)sender {
     __block NSString *generatorToSet = nil;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Set the system boot nonce on jailbreak" message:@"Enter the generator for the nonce you want the system to generate on boot" preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Set" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Set the system boot nonce on jailbreak") message:localize(@"Enter the generator for the nonce you want the system to generate on boot") preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:localize(@"Cancel") style:UIAlertActionStyleDefault handler:nil]];
+    [alertController addAction:[UIAlertAction actionWithTitle:localize(@"Set") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
          const char *generatorInput = [alertController.textFields.firstObject.text UTF8String];
          char compareString[22];
          uint64_t rawGeneratorValue;
          sscanf(generatorInput, "0x%16llx",&rawGeneratorValue);
          sprintf(compareString, "0x%016llx", rawGeneratorValue);
          if(strcmp(compareString, generatorInput) != 0) {
-             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to validate generator" preferredStyle:UIAlertControllerStyleAlert];
-             [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Error") message:localize(@"Failed to validate generator") preferredStyle:UIAlertControllerStyleAlert];
+             [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
              [self presentViewController:alertController animated:YES completion:nil];
              return;
          }
@@ -280,9 +281,9 @@ double uptime(){
         csops(getpid(), CS_OPS_STATUS, &flags, 0);
         UIAlertController *alertController = nil;
         if ((flags & CS_PLATFORM_BINARY)) {
-            alertController = [UIAlertController alertControllerWithTitle:@"Notice" message:@"The system boot nonce will be set the next time you enable your jailbreak" preferredStyle:UIAlertControllerStyleAlert];
+            alertController = [UIAlertController alertControllerWithTitle:localize(@"Notice") message:localize(@"The system boot nonce will be set the next time you enable your jailbreak") preferredStyle:UIAlertControllerStyleAlert];
         } else {
-            alertController = [UIAlertController alertControllerWithTitle:@"Notice" message:@"The system boot nonce will be set once you enable the jailbreak" preferredStyle:UIAlertControllerStyleAlert];
+            alertController = [UIAlertController alertControllerWithTitle:localize(@"Notice") message:localize(@"The system boot nonce will be set once you enable the jailbreak") preferredStyle:UIAlertControllerStyleAlert];
         }
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -320,23 +321,23 @@ NSString *_urlForUsername(NSString *user) {
 }
 
 - (void)removingLiberiOS {
-    postProgress(@"Removing liberiOS");
+    postProgress(localize(@"Removing liberiOS"));
 }
 
 - (void)installingCydia {
-    postProgress(@"Installing Cydia");
+    postProgress(localize(@"Installing Cydia"));
 }
 
 - (void)cydiaDone {
-    postProgress(@"Please Wait (2/3)");
+    postProgress(localize(@"Please Wait (2/3)"));
 }
 
 - (void)displaySnapshotNotice {
     dispatch_async(dispatch_get_main_queue(), ^{
-        postProgress(@"user prompt");
-        UIAlertController *apfsNoticeController = [UIAlertController alertControllerWithTitle:@"APFS Snapshot Created" message:@"An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future." preferredStyle:UIAlertControllerStyleAlert];
-        [apfsNoticeController addAction:[UIAlertAction actionWithTitle:@"Continue Jailbreak" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            postProgress(@"Please Wait (2/3)");
+        postProgress(localize(@"user prompt"));
+        UIAlertController *apfsNoticeController = [UIAlertController alertControllerWithTitle:localize(@"APFS Snapshot Created") message:localize(@"An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future.") preferredStyle:UIAlertControllerStyleAlert];
+        [apfsNoticeController addAction:[UIAlertAction actionWithTitle:localize(@"Continue Jailbreak") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            postProgress(localize(@"Please Wait (2/3)"));
             snapshotWarningRead();
         }]];
         [self presentViewController:apfsNoticeController animated:YES completion:nil];
@@ -345,10 +346,10 @@ NSString *_urlForUsername(NSString *user) {
 
 - (void)displaySnapshotWarning {
     dispatch_async(dispatch_get_main_queue(), ^{
-        postProgress(@"user prompt");
-        UIAlertController *apfsWarningController = [UIAlertController alertControllerWithTitle:@"APFS Snapshot Not Found" message:@"Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot." preferredStyle:UIAlertControllerStyleAlert];
+        postProgress(localize(@"user prompt"));
+        UIAlertController *apfsWarningController = [UIAlertController alertControllerWithTitle:localize(@"APFS Snapshot Not Found") message:localize(@"Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot.") preferredStyle:UIAlertControllerStyleAlert];
         [apfsWarningController addAction:[UIAlertAction actionWithTitle:@"Continue Jailbreak" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            postProgress(@"Please Wait (2/3)");
+            postProgress(localize(@"Please Wait (2/3)"));
             snapshotWarningRead();
         }]];
         [self presentViewController:apfsWarningController animated:YES completion:nil];
