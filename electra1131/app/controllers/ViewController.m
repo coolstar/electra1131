@@ -161,7 +161,7 @@ double uptime(){
 }
 
 - (IBAction)credits:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Credits") message:localize(@"Thanks to CoolStar, Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Credits") message:localize(@"Thanks to Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29") preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
