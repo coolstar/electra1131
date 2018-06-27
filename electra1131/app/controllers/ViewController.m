@@ -264,7 +264,7 @@ double uptime(){
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Set the system boot nonce on jailbreak") message:localize(@"Enter the generator for the nonce you want the system to generate on boot") preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:localize(@"Cancel") style:UIAlertActionStyleDefault handler:nil]];
-    [alertController addAction:[UIAlertAction actionWithTitle:localize(@"Set") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *set = [UIAlertAction actionWithTitle:localize(@"Set") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
          const char *generatorInput = [alertController.textFields.firstObject.text UTF8String];
          char compareString[22];
          uint64_t rawGeneratorValue;
@@ -289,7 +289,9 @@ double uptime(){
         }
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
-     }]];
+     }];
+    [alertController addAction:set];
+    [alertController setPreferredAction:set];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = [NSString stringWithFormat:@"%s", genToSet()];
     }];
