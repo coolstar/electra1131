@@ -6,11 +6,6 @@
   Copyright © 2018 Electra Team. All rights reserved.
 */
 
-"Jailbreak" = "Jailbreak";
-"Brought to you by the " = "Brought to you by the ";
-"Tweaks" = "Tweaks";
-"Credits" = "Credits";
-"Set Generator" = "Set Generator";
 "Update Available!" = "Update Available!";
 "An update for Electra is available! Please visit %@ on a computer to download the latest IPA!" = "An update for Electra is available! Please visit %@ on a computer to download the latest IPA!";
 "Version Error" = "Version Error";
