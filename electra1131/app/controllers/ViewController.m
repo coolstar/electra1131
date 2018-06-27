@@ -22,6 +22,7 @@ static ViewController *currentViewController;
 #define postProgress(prg) [[NSNotificationCenter defaultCenter] postNotificationName: @"JB" object:nil userInfo:@{@"JBProgress": prg}]
 
 #define ELECTRA_URL "https://coolstar.org/electra/"
+#define ELECTRA_TEAM_TWITTER_HANDLE "Electra_Team"
 #define K_ENABLE_TWEAKS "enableTweaks"
 #define K_GENERATOR "generator"
 
@@ -46,7 +47,7 @@ double uptime(){
 
 -(void)updateProgressFromNotification:(id)sender{
     
-    dispatch_async(dispatch_get_main_queue(), ^(void){
+    dispatch_async(dispatch_get_main_queue(), ^{
         NSString *prog=[sender userInfo][@"JBProgress"];
         NSLog(@"Progress: %@",prog);
         [_jailbreak setEnabled:NO];
@@ -128,9 +129,8 @@ double uptime(){
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     
     if ((flags & CS_PLATFORM_BINARY)) {
-        [_jailbreak setEnabled:NO];
         [_enableTweaks setEnabled:NO];
-        [_jailbreak setTitle:localize(@"Already Jailbroken") forState:UIControlStateNormal];
+        [_jailbreak setTitle:localize(@"Share Electra") forState:UIControlStateNormal];
         
         enable3DTouch = NO;
     }
@@ -167,6 +167,13 @@ double uptime(){
 }
 
 - (IBAction)doit:(id)sender {
+    uint32_t flags;
+    csops(getpid(), CS_OPS_STATUS, &flags, 0);
+    if ((flags & CS_PLATFORM_BINARY)) {
+        composeTweetWithMessage([NSString stringWithFormat:localize(@"I am using the Electra Jailbreak ToolKit for iOS 11.2 - 11.3.1 by the @%@ to jailbreak my %@ on iOS %@! You can get it now at %@"), @ELECTRA_TEAM_TWITTER_HANDLE, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], @ELECTRA_URL]);
+        return;
+    }
+    
     [sender setEnabled:NO];
     [_enableTweaks setEnabled:NO];
     
@@ -298,16 +305,15 @@ double uptime(){
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-NSString *_urlForUsername(NSString *user) {
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"aphelion://"]]) {
-        return [@"aphelion://profile/" stringByAppendingString:user];
-    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tweetbot://"]]) {
+NSString *getURLForUsername(NSString *user) {
+    UIApplication *application = [UIApplication sharedApplication];
+    if ([application canOpenURL:[NSURL URLWithString:@"tweetbot://"]]) {
         return [@"tweetbot:///user_profile/" stringByAppendingString:user];
-    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitterrific://"]]) {
+    } else if ([application canOpenURL:[NSURL URLWithString:@"twitterrific://"]]) {
         return [@"twitterrific:///profile?screen_name=" stringByAppendingString:user];
-    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tweetings://"]]) {
+    } else if ([application canOpenURL:[NSURL URLWithString:@"tweetings://"]]) {
         return [@"tweetings:///user?screen_name=" stringByAppendingString:user];
-    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
+    } else if ([application canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
         return [@"twitter://user?screen_name=" stringByAppendingString:user];
     } else {
         return [@"https://mobile.twitter.com/" stringByAppendingString:user];
@@ -315,13 +321,32 @@ NSString *_urlForUsername(NSString *user) {
     return nil;
 }
 
-- (IBAction)tappedOnHyperlink:(id)sender {
-    [sender setAlpha:0.7];
+void composeTweetWithMessage(NSString *message) {
+    NSURL *URL = nil;
     UIApplication *application = [UIApplication sharedApplication];
-    NSString *str = _urlForUsername(@"Electra_Team");
+    NSString *msg = [message stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    if ([application canOpenURL:[NSURL URLWithString:@"tweetbot://"]]) {
+        URL = [NSURL URLWithString:[@"tweetbot:///post?text=" stringByAppendingString:msg]];
+    } else if ([application canOpenURL:[NSURL URLWithString:@"twitterrific://"]]) {
+        URL = [NSURL URLWithString:[@"twitterrific:///post?message=" stringByAppendingString:msg]];
+    } else if ([application canOpenURL:[NSURL URLWithString:@"tweetings://"]]) {
+        URL = [NSURL URLWithString:[@"tweetings:///post?" stringByAppendingString:msg]];
+    } else if ([application canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
+        URL = [NSURL URLWithString:[@"twitter://post?message=" stringByAppendingString:msg]];
+    } else {
+        [NSURL URLWithString:[@"https://mobile.twitter.com/intent/tweet?text=" stringByAppendingString:msg]];
+    }
+    NSLog(@"Generated URL for post: %@", URL);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [application openURL:URL options:@{} completionHandler:nil];
+    });
+}
+
+- (IBAction)tappedOnHyperlink:(id)sender {
+    UIApplication *application = [UIApplication sharedApplication];
+    NSString *str = getURLForUsername(@ELECTRA_TEAM_TWITTER_HANDLE);
     NSURL *URL = [NSURL URLWithString:str];
     [application openURL:URL options:@{} completionHandler:nil];
-    [sender setAlpha:1.0];
 }
 
 - (void)removingLiberiOS {

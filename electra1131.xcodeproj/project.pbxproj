@@ -70,6 +70,7 @@
 		21AF0C9520E39875008254EC /* localize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localize.h; sourceTree = "<group>"; };
 		21AF0C9620E39875008254EC /* localize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = localize.m; sourceTree = "<group>"; };
 		21AF0C9B20E39E62008254EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		21AF0CAC20E3C6FA008254EC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = createSystemSnapshot.plist; sourceTree = "<group>"; };
 		21E077F620D5424F00F86A55 /* nonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nonce.h; sourceTree = "<group>"; };
 		21E077F720D5424F00F86A55 /* nonce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nonce.c; sourceTree = "<group>"; };
@@ -290,6 +291,7 @@
 		F143E0FC20C9ED310018A47B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21AF0CAC20E3C6FA008254EC /* Social.framework */,
 				F143E0FF20C9ED670018A47B /* libcompression.tbd */,
 				F143E0FD20C9ED310018A47B /* libz.tbd */,
 			);
@@ -628,11 +630,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CODE_SIGN_ENTITLEMENTS = electra1131/electra1131.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/electra1131/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -658,11 +662,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CODE_SIGN_ENTITLEMENTS = electra1131/electra1131.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/electra1131/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
