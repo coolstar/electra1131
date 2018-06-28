@@ -161,8 +161,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="tappedOnSetGenerator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vp0-3Y-ZUw"/>
-                                                    <action selector="tappedOnsetNonce:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2GK-5Z-GOV"/>
+                                                    <action selector="tappedOnSetNonce:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="4KZ-86-rt5"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -222,7 +221,7 @@
                         <outlet property="compatibilityLabel" destination="742-v6-jJT" id="p1S-XL-d8O"/>
                         <outlet property="enableTweaks" destination="Ggt-pB-Zy0" id="6p8-EF-Uec"/>
                         <outlet property="jailbreak" destination="fB9-4u-Bfa" id="Qhc-Ja-xmU"/>
-                        <outlet property="setNonce" destination="Ll4-6Q-Yds" id="HYs-fx-1uC"/>
+                        <outlet property="setNonce" destination="Ll4-6Q-Yds" id="UFS-R3-l34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
