@@ -161,7 +161,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="tappedOnSetNonce:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="4KZ-86-rt5"/>
+                                                    <action selector="tappedOnSetNonce:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ox-Ck-o8u"/>
                                                 </connections>
                                             </button>
                                         </subviews>
