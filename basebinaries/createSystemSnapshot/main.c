@@ -14,7 +14,7 @@
 #include <sys/snapshot.h>
 #include <unistd.h>
 
-int find_rootfd(void) {
+int get_rootfd(void) {
     int dirfd = open("/", O_RDONLY, 0);
     if (dirfd < 0) {
         perror("open");
@@ -24,7 +24,7 @@ int find_rootfd(void) {
 }
 
 int do_create(const char *snap) {
-    int rootfd = find_rootfd();
+    int rootfd = get_rootfd();
     
     int ret = fs_snapshot_create(rootfd, snap, 0);
     if (ret != 0)
@@ -33,7 +33,7 @@ int do_create(const char *snap) {
 }
 
 int do_delete(const char *snap) {
-    int rootfd = find_rootfd();
+    int rootfd = get_rootfd();
     
     int ret = fs_snapshot_delete(rootfd, snap, 0);
     if (ret != 0)
@@ -42,7 +42,7 @@ int do_delete(const char *snap) {
 }
 
 int do_rename(const char *snap, const char *nw) {
-    int rootfd = find_rootfd();
+    int rootfd = get_rootfd();
     
     int ret = fs_snapshot_rename(rootfd, snap, nw, 0);
     if (ret != 0)
@@ -51,7 +51,7 @@ int do_rename(const char *snap, const char *nw) {
 }
 
 int check_snapshot(const char *snap) {
-    int rootfd = find_rootfd();
+    int rootfd = get_rootfd();
     
     struct attrlist alist = {0};
     char abuf[2048];
@@ -89,7 +89,7 @@ int check_snapshot(const char *snap) {
 }
 
 char *find_system_snapshot(void) {
-    int rootfd = find_rootfd();
+    int rootfd = get_rootfd();
     
     struct attrlist alist = {0};
     char abuf[2048];
@@ -126,7 +126,7 @@ char *find_system_snapshot(void) {
 }
 
 void clean_tmp_snapshots(void) {
-    int rootfd = find_rootfd();
+    int rootfd = get_rootfd();
     
     struct attrlist alist = {0};
     char abuf[2048];

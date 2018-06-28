@@ -152,7 +152,7 @@
                                                 <rect key="frame" x="158" y="0.0" width="142" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                <state key="normal" title="Set Generator">
+                                                <state key="normal" title="Set Nonce">
                                                     <color key="titleColor" red="0.25630999999999998" green="0.30879000000000001" blue="0.38431999999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -162,6 +162,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedOnSetGenerator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vp0-3Y-ZUw"/>
+                                                    <action selector="tappedOnsetNonce:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2GK-5Z-GOV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -221,7 +222,7 @@
                         <outlet property="compatibilityLabel" destination="742-v6-jJT" id="p1S-XL-d8O"/>
                         <outlet property="enableTweaks" destination="Ggt-pB-Zy0" id="6p8-EF-Uec"/>
                         <outlet property="jailbreak" destination="fB9-4u-Bfa" id="Qhc-Ja-xmU"/>
-                        <outlet property="setGenerator" destination="Ll4-6Q-Yds" id="G5U-bp-tD2"/>
+                        <outlet property="setNonce" destination="Ll4-6Q-Yds" id="HYs-fx-1uC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -52,7 +52,7 @@ double uptime(){
         NSLog(@"Progress: %@",prog);
         [_jailbreak setEnabled:NO];
         [_enableTweaks setEnabled:NO];
-        [_setGenerator setEnabled:NO];
+        [_setNonce setEnabled:NO];
         [_jailbreak setTitle:prog forState:UIControlStateNormal];
     });
 }
@@ -266,7 +266,7 @@ double uptime(){
     });
 }
 
-- (IBAction)tappedOnSetGenerator:(id)sender {
+- (IBAction)tappedOnsetNonce:(id)sender {
     __block NSString *generatorToSet = nil;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Set the system boot nonce on jailbreak") message:localize(@"Enter the generator for the nonce you want the system to generate on boot") preferredStyle:UIAlertControllerStyleAlert];

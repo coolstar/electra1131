@@ -9,7 +9,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *jailbreak;
-@property (weak, nonatomic) IBOutlet UIButton *setGenerator;
+@property (weak, nonatomic) IBOutlet UIButton *setNonce;
 @property (weak, nonatomic) IBOutlet UISwitch *enableTweaks;
 @property (weak, nonatomic) IBOutlet UILabel *compatibilityLabel;
 + (instancetype)currentViewController;
