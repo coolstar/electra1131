@@ -15,7 +15,6 @@
 		21A2C43D20DBC09E000BA2B2 /* libimg4tool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43820DBC09E000BA2B2 /* libimg4tool.a */; };
 		21A2C43E20DBC09E000BA2B2 /* libplist++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43920DBC09E000BA2B2 /* libplist++.a */; };
 		21A2C43F20DBC09E000BA2B2 /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43A20DBC09E000BA2B2 /* libmerged.a */; };
-		21AF0C9720E39875008254EC /* localize.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF0C9620E39875008254EC /* localize.m */; };
 		21AF0C9A20E39E62008254EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21AF0C9C20E39E62008254EC /* Localizable.strings */; };
 		21D9C6D920DD333700E25E87 /* createSystemSnapshot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */; };
 		21E077F820D5425000F86A55 /* nonce.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E077F720D5424F00F86A55 /* nonce.c */; };
@@ -67,8 +66,6 @@
 		21A2C43820DBC09E000BA2B2 /* libimg4tool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libimg4tool.a; sourceTree = "<group>"; };
 		21A2C43920DBC09E000BA2B2 /* libplist++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libplist++.a"; sourceTree = "<group>"; };
 		21A2C43A20DBC09E000BA2B2 /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
-		21AF0C9520E39875008254EC /* localize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localize.h; sourceTree = "<group>"; };
-		21AF0C9620E39875008254EC /* localize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = localize.m; sourceTree = "<group>"; };
 		21AF0C9B20E39E62008254EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21AF0CAC20E3C6FA008254EC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = createSystemSnapshot.plist; sourceTree = "<group>"; };
@@ -272,8 +269,6 @@
 				F134CC9B20C89D7A00DA1F72 /* apfs_util.h */,
 				21F33F6620E0052F0083D9C0 /* removePotentialJailbreak.h */,
 				21F33F6720E0052F0083D9C0 /* removePotentialJailbreak.c */,
-				21AF0C9520E39875008254EC /* localize.h */,
-				21AF0C9620E39875008254EC /* localize.m */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -465,7 +460,6 @@
 				F161FD1020CDB22D009D4652 /* start_jailbreakd.m in Sources */,
 				B060B7ED20BC0624001FD0CE /* main.m in Sources */,
 				B00730BC20C723AE005995FA /* offsets.m in Sources */,
-				21AF0C9720E39875008254EC /* localize.m in Sources */,
 				F13A09E020C85E9A00DC838E /* patchfinder64.c in Sources */,
 				F143E0F620C9DF250018A47B /* rootfs_remount.c in Sources */,
 				F19119E620D9FE0F00CA1BB5 /* CSGradientView.m in Sources */,

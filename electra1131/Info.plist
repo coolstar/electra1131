@@ -22,7 +22,6 @@
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>aphelion</string>
 		<string>tweetbot</string>
 		<string>twitterrific</string>
 		<string>tweetings</string>

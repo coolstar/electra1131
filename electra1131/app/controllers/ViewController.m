@@ -9,7 +9,6 @@
 #include <sys/sysctl.h>
 #include "file_utils.h"
 #include "electra_objc.h"
-#include "localize.h"
 
 @interface ViewController ()
 
@@ -19,6 +18,7 @@ static ViewController *currentViewController;
 
 @implementation ViewController
 
+#define localize(key) NSLocalizedString(key, @"")
 #define postProgress(prg) [[NSNotificationCenter defaultCenter] postNotificationName: @"JB" object:nil userInfo:@{@"JBProgress": prg}]
 
 #define ELECTRA_URL "https://coolstar.org/electra/"
