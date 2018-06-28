@@ -170,7 +170,7 @@ double uptime(){
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     if ((flags & CS_PLATFORM_BINARY)) {
-        composeTweetWithMessage([NSString stringWithFormat:localize(@"I am using the Electra Jailbreak ToolKit for iOS 11.2 - 11.3.1 by the @%@ to jailbreak my %@ on iOS %@! You can get it now at %@"), @ELECTRA_TEAM_TWITTER_HANDLE, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], @ELECTRA_URL]);
+        composeTweetWithMessage([NSString stringWithFormat:localize(@"I am using the Electra Jailbreak Toolkit for iOS 11.2 - 11.3.1 by the @%@ to jailbreak my %@ on iOS %@! You can get it now at %@"), @ELECTRA_TEAM_TWITTER_HANDLE, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], @ELECTRA_URL]);
         return;
     }
     
