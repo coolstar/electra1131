@@ -256,6 +256,10 @@ double uptime(){
                 postProgress(localize(@"Error: snapshot failed"));
                 break;
             }
+            case ERR_CONFLICT: {
+                postProgress(localize(@"Error: conflict"));
+                break;
+            }
             default: {
                 postProgress(localize(@"Error Jailbreaking"));
                 break;

@@ -16,6 +16,7 @@
 		21A2C43E20DBC09E000BA2B2 /* libplist++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43920DBC09E000BA2B2 /* libplist++.a */; };
 		21A2C43F20DBC09E000BA2B2 /* libmerged.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43A20DBC09E000BA2B2 /* libmerged.a */; };
 		21AF0C9A20E39E62008254EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21AF0C9C20E39E62008254EC /* Localizable.strings */; };
+		21BC7A0620E631D000B8F028 /* detectConflictJailbreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC7A0520E631D000B8F028 /* detectConflictJailbreak.m */; };
 		21D9C6D920DD333700E25E87 /* createSystemSnapshot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */; };
 		21E077F820D5425000F86A55 /* nonce.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E077F720D5424F00F86A55 /* nonce.c */; };
 		21F33F6820E0052F0083D9C0 /* removePotentialJailbreak.c in Sources */ = {isa = PBXBuildFile; fileRef = 21F33F6720E0052F0083D9C0 /* removePotentialJailbreak.c */; };
@@ -68,6 +69,8 @@
 		21A2C43A20DBC09E000BA2B2 /* libmerged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmerged.a; sourceTree = "<group>"; };
 		21AF0C9B20E39E62008254EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21AF0CAC20E3C6FA008254EC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		21BC7A0420E631D000B8F028 /* detectConflictJailbreak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detectConflictJailbreak.h; sourceTree = "<group>"; };
+		21BC7A0520E631D000B8F028 /* detectConflictJailbreak.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = detectConflictJailbreak.m; sourceTree = "<group>"; };
 		21D9C6D820DD333700E25E87 /* createSystemSnapshot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = createSystemSnapshot.plist; sourceTree = "<group>"; };
 		21E077F620D5424F00F86A55 /* nonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nonce.h; sourceTree = "<group>"; };
 		21E077F720D5424F00F86A55 /* nonce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nonce.c; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				F134CC9B20C89D7A00DA1F72 /* apfs_util.h */,
 				21F33F6620E0052F0083D9C0 /* removePotentialJailbreak.h */,
 				21F33F6720E0052F0083D9C0 /* removePotentialJailbreak.c */,
+				21BC7A0420E631D000B8F028 /* detectConflictJailbreak.h */,
+				21BC7A0520E631D000B8F028 /* detectConflictJailbreak.m */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */,
 				F161FD0E20CDB12D009D4652 /* bootstrap.c in Sources */,
 				F143E0F920C9EBFF0018A47B /* rootfs_remount_offsetfinder.cpp in Sources */,
+				21BC7A0620E631D000B8F028 /* detectConflictJailbreak.m in Sources */,
 				210302E420E0D0090002D2F3 /* kmem.c in Sources */,
 				F167E3C320C927C1006B956D /* file_utils.c in Sources */,
 				F167E3C620C927DE006B956D /* electra_objc.m in Sources */,

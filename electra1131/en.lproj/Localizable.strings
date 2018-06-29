@@ -32,6 +32,7 @@
 "Error: amfid patch" = "Error: amfid patch";
 "Error: rootfs remount" = "Error: rootfs remount";
 "Error: snapshot failed" = "Error: snapshot failed";
+"Error: conflict" = "Error: conflict";
 "Error Jailbreaking" = "Error Jailbreaking";
 "Set the system boot nonce on jailbreak" = "Set the system boot nonce on jailbreak";
 "Enter the generator for the nonce you want the system to generate on boot" = "Enter the generator for the nonce you want the system to generate on boot";
