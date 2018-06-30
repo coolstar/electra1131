@@ -338,7 +338,7 @@ void composeTweetWithMessage(NSString *message) {
     } else if ([application canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
         URL = [NSURL URLWithString:[@"twitter://post?message=" stringByAppendingString:msg]];
     } else {
-        [NSURL URLWithString:[@"https://mobile.twitter.com/intent/tweet?text=" stringByAppendingString:msg]];
+        URL = [NSURL URLWithString:[@"https://mobile.twitter.com/intent/tweet?text=" stringByAppendingString:msg]];
     }
     NSLog(@"Generated URL for post: %@", URL);
     dispatch_async(dispatch_get_main_queue(), ^{
