@@ -18,6 +18,7 @@
 - (void)cydiaDone;
 - (void)displaySnapshotNotice;
 - (void)displaySnapshotWarning;
+- (void)restarting;
 
 @end
 

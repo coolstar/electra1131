@@ -389,6 +389,10 @@ void composeTweetWithMessage(NSString *message) {
     });
 }
 
+- (void)restarting {
+    postProgress(localize(@"Restarting"));
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }

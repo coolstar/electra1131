@@ -45,6 +45,7 @@
 "The system boot nonce will be set once you enable the jailbreak" = "The system boot nonce will be set once you enable the jailbreak";
 "Removing liberiOS" = "Removing liberiOS";
 "Installing Cydia" = "Installing Cydia";
+"Restarting" = "Restarting";
 "APFS Snapshot Created" = "APFS Snapshot Created";
 "An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future." = "An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future.";
 "Continue Jailbreak" = "Continue Jailbreak";
