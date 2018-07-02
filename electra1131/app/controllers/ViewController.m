@@ -24,7 +24,6 @@ static ViewController *currentViewController;
 #define ELECTRA_URL "https://coolstar.org/electra/"
 #define ELECTRA_TEAM_TWITTER_HANDLE "Electra_Team"
 #define K_ENABLE_TWEAKS "enableTweaks"
-#define K_GENERATOR "generator"
 
 + (instancetype)currentViewController {
     return currentViewController;
