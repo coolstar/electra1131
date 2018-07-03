@@ -63,6 +63,7 @@
 		210302E620E0DB2B0002D2F3 /* vfs_sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vfs_sploit.c; sourceTree = "<group>"; };
 		2143C9D920E7A50300AFB745 /* libMobileGestalt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestalt.tbd; path = usr/lib/libMobileGestalt.tbd; sourceTree = SDKROOT; };
 		2143C9DB20E7A51900AFB745 /* MobileGestalt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileGestalt.h; sourceTree = "<group>"; };
+		21463F4820EBE7F6006F4E06 /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
 		21A2C41020DAAA13000BA2B2 /* unliberios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unliberios.h; sourceTree = "<group>"; };
 		21A2C41120DAAA14000BA2B2 /* unliberios.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unliberios.c; sourceTree = "<group>"; };
 		21A2C43620DBC09E000BA2B2 /* liboffsetfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboffsetfinder64.a; sourceTree = "<group>"; };
@@ -278,6 +279,7 @@
 				21F33F6720E0052F0083D9C0 /* removePotentialJailbreak.c */,
 				21BC7A0420E631D000B8F028 /* detectConflictJailbreak.h */,
 				21BC7A0520E631D000B8F028 /* detectConflictJailbreak.m */,
+				21463F4820EBE7F6006F4E06 /* debug.h */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
