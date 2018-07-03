@@ -11,7 +11,6 @@
 #include "electra_objc.h"
 
 @interface ViewController ()
-
 @end
 
 static ViewController *currentViewController;
@@ -74,6 +73,15 @@ double uptime(){
             });
         }
     });
+}
+
+- (void)shareElectra {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:localize(@"I am using the Electra Jailbreak Toolkit for iOS 11.2 - 11.3.1 by the @%@ to jailbreak my %@ on iOS %@! You can get it now at %@"), @ELECTRA_TEAM_TWITTER_HANDLE, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], @ELECTRA_URL]] applicationActivities:nil];
+    activityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAirDrop, UIActivityTypeOpenInIBooks, UIActivityTypeMarkupAsPDF];
+    if ([activityViewController respondsToSelector:@selector(popoverPresentationController)] ) {
+        activityViewController.popoverPresentationController.sourceView = _jailbreak;
+    }
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -169,7 +177,7 @@ double uptime(){
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     if ((flags & CS_PLATFORM_BINARY)) {
-        composeTweetWithMessage([NSString stringWithFormat:localize(@"I am using the Electra Jailbreak Toolkit for iOS 11.2 - 11.3.1 by the @%@ to jailbreak my %@ on iOS %@! You can get it now at %@"), @ELECTRA_TEAM_TWITTER_HANDLE, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], @ELECTRA_URL]);
+        [self shareElectra];
         return;
     }
     
@@ -322,27 +330,6 @@ NSString *getURLForUsername(NSString *user) {
         return [@"https://mobile.twitter.com/" stringByAppendingString:user];
     }
     return nil;
-}
-
-void composeTweetWithMessage(NSString *message) {
-    NSURL *URL = nil;
-    UIApplication *application = [UIApplication sharedApplication];
-    NSString *msg = [message stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-    if ([application canOpenURL:[NSURL URLWithString:@"tweetbot://"]]) {
-        URL = [NSURL URLWithString:[@"tweetbot:///post?text=" stringByAppendingString:msg]];
-    } else if ([application canOpenURL:[NSURL URLWithString:@"twitterrific://"]]) {
-        URL = [NSURL URLWithString:[@"twitterrific:///post?message=" stringByAppendingString:msg]];
-    } else if ([application canOpenURL:[NSURL URLWithString:@"tweetings://"]]) {
-        URL = [NSURL URLWithString:[@"tweetings:///post?" stringByAppendingString:msg]];
-    } else if ([application canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
-        URL = [NSURL URLWithString:[@"twitter://post?message=" stringByAppendingString:msg]];
-    } else {
-        URL = [NSURL URLWithString:[@"https://mobile.twitter.com/intent/tweet?text=" stringByAppendingString:msg]];
-    }
-    NSLog(@"Generated URL for post: %@", URL);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [application openURL:URL options:@{} completionHandler:nil];
-    });
 }
 
 - (IBAction)tappedOnHyperlink:(id)sender {
