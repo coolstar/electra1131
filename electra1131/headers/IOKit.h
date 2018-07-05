@@ -63,6 +63,10 @@ IORegistryEntryGetProperty(
                            const io_name_t        propertyName,
                            io_struct_inband_t    buffer,
                            uint32_t          * size );
+io_registry_entry_t IORegistryEntryFromPath(
+                                mach_port_t port,
+                                char *path );
+kern_return_t IOObjectRelease(io_object_t object);
 
 kern_return_t IOConnectTrap6(io_connect_t connect, uint32_t index, uintptr_t p1, uintptr_t p2, uintptr_t p3, uintptr_t p4, uintptr_t p5, uintptr_t p6);
 kern_return_t mach_vm_read_overwrite(vm_map_t target_task, mach_vm_address_t address, mach_vm_size_t size, mach_vm_address_t data, mach_vm_size_t *outsize);
