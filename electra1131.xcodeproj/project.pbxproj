@@ -60,6 +60,7 @@
 		210302E320E0D0090002D2F3 /* kmem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
 		210302E520E0DB2A0002D2F3 /* vfs_sploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vfs_sploit.h; sourceTree = "<group>"; };
 		210302E620E0DB2B0002D2F3 /* vfs_sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vfs_sploit.c; sourceTree = "<group>"; };
+		2124A2F120EEB13E00E30610 /* reboot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reboot.h; sourceTree = "<group>"; };
 		2143C9D920E7A50300AFB745 /* libMobileGestalt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestalt.tbd; path = usr/lib/libMobileGestalt.tbd; sourceTree = SDKROOT; };
 		2143C9DB20E7A51900AFB745 /* MobileGestalt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileGestalt.h; sourceTree = "<group>"; };
 		21463F4820EBE7F6006F4E06 /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
@@ -285,6 +286,7 @@
 		F13A09E820C8609400DC838E /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				2124A2F120EEB13E00E30610 /* reboot.h */,
 				2143C9DB20E7A51900AFB745 /* MobileGestalt.h */,
 				F13A09E920C860A800DC838E /* codesign.h */,
 				F13A09EB20C860A800DC838E /* IOKit.h */,
