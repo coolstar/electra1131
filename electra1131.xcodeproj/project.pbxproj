@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		210302E420E0D0090002D2F3 /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 210302E320E0D0090002D2F3 /* kmem.c */; };
 		210302E720E0DB2B0002D2F3 /* vfs_sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 210302E620E0DB2B0002D2F3 /* vfs_sploit.c */; settings = {COMPILER_FLAGS = "-Wno-unused-variable"; }; };
+		2124A2F620EF532200E30610 /* NSString+SHA256.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124A2F520EF532200E30610 /* NSString+SHA256.m */; };
 		2143C9DA20E7A50300AFB745 /* libMobileGestalt.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2143C9D920E7A50300AFB745 /* libMobileGestalt.tbd */; };
 		21A2C41220DAAA14000BA2B2 /* unliberios.c in Sources */ = {isa = PBXBuildFile; fileRef = 21A2C41120DAAA14000BA2B2 /* unliberios.c */; };
 		21A2C43B20DBC09E000BA2B2 /* liboffsetfinder64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43620DBC09E000BA2B2 /* liboffsetfinder64.a */; };
@@ -61,6 +62,8 @@
 		210302E520E0DB2A0002D2F3 /* vfs_sploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vfs_sploit.h; sourceTree = "<group>"; };
 		210302E620E0DB2B0002D2F3 /* vfs_sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vfs_sploit.c; sourceTree = "<group>"; };
 		2124A2F120EEB13E00E30610 /* reboot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reboot.h; sourceTree = "<group>"; };
+		2124A2F420EF52D300E30610 /* NSString+SHA256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA256.h"; sourceTree = "<group>"; };
+		2124A2F520EF532200E30610 /* NSString+SHA256.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA256.m"; sourceTree = "<group>"; };
 		2143C9D920E7A50300AFB745 /* libMobileGestalt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestalt.tbd; path = usr/lib/libMobileGestalt.tbd; sourceTree = SDKROOT; };
 		2143C9DB20E7A51900AFB745 /* MobileGestalt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileGestalt.h; sourceTree = "<group>"; };
 		21463F4820EBE7F6006F4E06 /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
@@ -162,6 +165,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2124A2F320EF52A700E30610 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F167E3C720C9281A006B956D /* NSData+GZip.h */,
+				F167E3C820C9281A006B956D /* NSData+GZip.m */,
+				2124A2F420EF52D300E30610 /* NSString+SHA256.h */,
+				2124A2F520EF532200E30610 /* NSString+SHA256.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		21A2C43520DBC09E000BA2B2 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,11 +208,10 @@
 		B060B7DC20BC0624001FD0CE /* electra1131 */ = {
 			isa = PBXGroup;
 			children = (
+				2124A2F320EF52A700E30610 /* Extensions */,
 				21A2C43520DBC09E000BA2B2 /* libs */,
 				B060B7F320BC063F001FD0CE /* electra1131.entitlements */,
 				F19119E220D9FDE000CA1BB5 /* app */,
-				F167E3C720C9281A006B956D /* NSData+GZip.h */,
-				F167E3C820C9281A006B956D /* NSData+GZip.m */,
 				F13A09E820C8609400DC838E /* headers */,
 				F13A09DC20C85E3D00DC838E /* exploit */,
 				F1BE57C020CDB0780087F82D /* bootstrap */,
@@ -481,6 +494,7 @@
 				F13A09E320C85EFA00DC838E /* electra.c in Sources */,
 				210302E720E0DB2B0002D2F3 /* vfs_sploit.c in Sources */,
 				F13A09EE20C8653E00DC838E /* exploit_additions.c in Sources */,
+				2124A2F620EF532200E30610 /* NSString+SHA256.m in Sources */,
 				B060B7DF20BC0624001FD0CE /* AppDelegate.m in Sources */,
 				F134CC9620C89C7600DA1F72 /* amfi_utils.c in Sources */,
 				F161FD0E20CDB12D009D4652 /* bootstrap.c in Sources */,
