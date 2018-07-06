@@ -98,7 +98,6 @@
 		B060B7E920BC0624001FD0CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B060B7EB20BC0624001FD0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B060B7EC20BC0624001FD0CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B060B7F320BC063F001FD0CE /* electra1131.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = electra1131.entitlements; sourceTree = "<group>"; };
 		F116EA2820C9CA5F000A24F6 /* liboffsetfinder64.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = liboffsetfinder64.hpp; sourceTree = "<group>"; };
 		F12FD1F220C876A6006BA4FD /* kexecute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kexecute.c; sourceTree = "<group>"; };
 		F12FD1F320C876A6006BA4FD /* kexecute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kexecute.h; sourceTree = "<group>"; };
@@ -210,7 +209,6 @@
 			children = (
 				2124A2F320EF52A700E30610 /* Extensions */,
 				21A2C43520DBC09E000BA2B2 /* libs */,
-				B060B7F320BC063F001FD0CE /* electra1131.entitlements */,
 				F19119E220D9FDE000CA1BB5 /* app */,
 				F13A09E820C8609400DC838E /* headers */,
 				F13A09DC20C85E3D00DC838E /* exploit */,
