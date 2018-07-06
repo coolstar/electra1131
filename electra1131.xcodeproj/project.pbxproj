@@ -10,6 +10,7 @@
 		210302E420E0D0090002D2F3 /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 210302E320E0D0090002D2F3 /* kmem.c */; };
 		210302E720E0DB2B0002D2F3 /* vfs_sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 210302E620E0DB2B0002D2F3 /* vfs_sploit.c */; settings = {COMPILER_FLAGS = "-Wno-unused-variable"; }; };
 		2124A2F620EF532200E30610 /* NSString+SHA256.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124A2F520EF532200E30610 /* NSString+SHA256.m */; };
+		2124A2FB20EF5E3800E30610 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 2124A2FA20EF5E3700E30610 /* README */; };
 		2143C9DA20E7A50300AFB745 /* libMobileGestalt.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2143C9D920E7A50300AFB745 /* libMobileGestalt.tbd */; };
 		21A2C41220DAAA14000BA2B2 /* unliberios.c in Sources */ = {isa = PBXBuildFile; fileRef = 21A2C41120DAAA14000BA2B2 /* unliberios.c */; };
 		21A2C43B20DBC09E000BA2B2 /* liboffsetfinder64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A2C43620DBC09E000BA2B2 /* liboffsetfinder64.a */; };
@@ -64,6 +65,7 @@
 		2124A2F120EEB13E00E30610 /* reboot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reboot.h; sourceTree = "<group>"; };
 		2124A2F420EF52D300E30610 /* NSString+SHA256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA256.h"; sourceTree = "<group>"; };
 		2124A2F520EF532200E30610 /* NSString+SHA256.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA256.m"; sourceTree = "<group>"; };
+		2124A2FA20EF5E3700E30610 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		2143C9D920E7A50300AFB745 /* libMobileGestalt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestalt.tbd; path = usr/lib/libMobileGestalt.tbd; sourceTree = SDKROOT; };
 		2143C9DB20E7A51900AFB745 /* MobileGestalt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileGestalt.h; sourceTree = "<group>"; };
 		21463F4820EBE7F6006F4E06 /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
@@ -175,6 +177,37 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2124A2F720EF5DC000E30610 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				B00730BE20C72BCB005995FA /* kmem.h */,
+				210302E320E0D0090002D2F3 /* kmem.c */,
+				B00730BD20C7273C005995FA /* offsets.h */,
+				B00730BB20C723AE005995FA /* offsets.m */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		2124A2F820EF5DC800E30610 /* multi_path */ = {
+			isa = PBXGroup;
+			children = (
+				B00730BF20C730BC005995FA /* README */,
+				B030E1F420BC0864000CDD4C /* multi_path_sploit.h */,
+				B030E1F520BC0864000CDD4C /* multi_path_sploit.c */,
+			);
+			path = multi_path;
+			sourceTree = "<group>";
+		};
+		2124A2F920EF5DCF00E30610 /* empty_list */ = {
+			isa = PBXGroup;
+			children = (
+				2124A2FA20EF5E3700E30610 /* README */,
+				210302E620E0DB2B0002D2F3 /* vfs_sploit.c */,
+				210302E520E0DB2A0002D2F3 /* vfs_sploit.h */,
+			);
+			path = empty_list;
+			sourceTree = "<group>";
+		};
 		21A2C43520DBC09E000BA2B2 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,15 +258,9 @@
 		F13A09DC20C85E3D00DC838E /* exploit */ = {
 			isa = PBXGroup;
 			children = (
-				210302E620E0DB2B0002D2F3 /* vfs_sploit.c */,
-				210302E520E0DB2A0002D2F3 /* vfs_sploit.h */,
-				210302E320E0D0090002D2F3 /* kmem.c */,
-				B030E1F420BC0864000CDD4C /* multi_path_sploit.h */,
-				B030E1F520BC0864000CDD4C /* multi_path_sploit.c */,
-				B00730BB20C723AE005995FA /* offsets.m */,
-				B00730BD20C7273C005995FA /* offsets.h */,
-				B00730BE20C72BCB005995FA /* kmem.h */,
-				B00730BF20C730BC005995FA /* README */,
+				2124A2F920EF5DCF00E30610 /* empty_list */,
+				2124A2F820EF5DC800E30610 /* multi_path */,
+				2124A2F720EF5DC000E30610 /* common */,
 			);
 			path = exploit;
 			sourceTree = "<group>";
@@ -426,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B00730C020C730BC005995FA /* README in Resources */,
+				2124A2FB20EF5E3800E30610 /* README in Resources */,
 				21AF0C9A20E39E62008254EC /* Localizable.strings in Resources */,
 				B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */,
 				F1BE57C820CDB09E0087F82D /* bootstrap.tar.gz in Resources */,
