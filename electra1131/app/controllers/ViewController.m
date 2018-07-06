@@ -49,6 +49,7 @@ double uptime(){
         NSString *prog=[sender userInfo][@"JBProgress"];
         NSLog(@"Progress: %@",prog);
         [_jailbreak setEnabled:NO];
+        [_jailbreak setAlpha:0.5];
         [_enableTweaks setEnabled:NO];
         [_setNonce setEnabled:NO];
         [_jailbreak setTitle:prog forState:UIControlStateNormal];
@@ -103,6 +104,7 @@ double uptime(){
         }
         case ERR_VERSION: {
             [_jailbreak setEnabled:NO];
+            [_jailbreak setAlpha:0.5];
             [_enableTweaks setEnabled:NO];
             [_jailbreak setTitle:localize(@"Version Error") forState:UIControlStateNormal];
             
@@ -112,6 +114,7 @@ double uptime(){
             
         default: {
             [_jailbreak setEnabled:NO];
+            [_jailbreak setAlpha:0.5];
             [_enableTweaks setEnabled:NO];
             [_jailbreak setTitle:localize(@"Error: offsets") forState:UIControlStateNormal];
             
