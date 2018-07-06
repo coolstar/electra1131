@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="368" width="320" height="234"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFy-KQ-Zk5">
-                                        <rect key="frame" x="9.5" y="45" width="299" height="50"/>
+                                        <rect key="frame" x="10.5" y="45" width="299" height="50"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ggt-pB-Zy0">
                                                 <rect key="frame" x="242" y="9.5" width="51" height="31"/>
@@ -126,7 +126,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-ev-Bdv">
-                                        <rect key="frame" x="9" y="105" width="299" height="50"/>
+                                        <rect key="frame" x="10" y="105" width="299" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcJ-fY-tUf">
                                                 <rect key="frame" x="0.0" y="0.0" width="142" height="50"/>
@@ -187,11 +187,6 @@
                                     <constraint firstItem="tFy-KQ-Zk5" firstAttribute="top" secondItem="5QN-ZM-Myu" secondAttribute="top" constant="45" id="eA0-ZR-1vx"/>
                                     <constraint firstItem="dbk-ev-Bdv" firstAttribute="trailing" secondItem="tFy-KQ-Zk5" secondAttribute="trailing" id="jtm-UX-xNq"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <constraints>
