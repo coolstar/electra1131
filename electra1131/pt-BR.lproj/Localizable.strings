@@ -49,5 +49,5 @@
 "APFS Snapshot Created" = "Snapshot APFS Criado";
 "An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future." = "Um Snapshot APFS foi criado com sucesso! Você será capaz de usar o Semirestore para restaurar o seu dispositivo para esse snapshot no futuro";
 "Continue Jailbreak" = "Continuar Jailbreak";
-"APFS Snapshot Not Found" = "Snapshot Apfs Não Encontrado";
+"APFS Snapshot Not Found" = "Snapshot APFS Não Encontrado";
 "Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot." = "Aviso: Seu dispositivo ja foi alterado usando uma versão antiga do Electra que não possuia o snapshot APFS. Embora o  Electra possa funcionar bem, Você não será capaz de utilizar o SemiRestore para restaurar o estado de fabrica. Por favor limpe o seu dispositivo e re-utilize essa versão do Electra para criar o Snapshot.";
