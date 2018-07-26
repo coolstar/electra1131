@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Brought to you by the "; ObjectID = "1fC-j2-0wp"; */
+"1fC-j2-0wp.text" = "Feito para você por: ";
+
+/* Class = "UILabel"; text = "Tweaks"; ObjectID = "4H6-RC-SIx"; */
+"4H6-RC-SIx.text" = "Tweaks";
+
+/* Class = "UIButton"; normalTitle = "Set Nonce"; ObjectID = "Ll4-6Q-Yds"; */
+"Ll4-6Q-Yds.normalTitle" = "Definir Nonce";
+
+/* Class = "UIButton"; normalTitle = "Credits"; ObjectID = "NcJ-fY-tUf"; */
+"NcJ-fY-tUf.normalTitle" = "Créditos";
+
+/* Class = "UIButton"; normalTitle = "@Electra_Team"; ObjectID = "ZJY-zs-sEX"; */
+"ZJY-zs-sEX.normalTitle" = "@Electra_Team";
+
+/* Class = "UIButton"; normalTitle = "Jailbreak"; ObjectID = "fB9-4u-Bfa"; */
+"fB9-4u-Bfa.normalTitle" = "Jailbreak";
