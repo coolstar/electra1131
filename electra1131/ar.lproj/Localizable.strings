@@ -6,7 +6,7 @@
   Copyright © 2018 Electra Team. All rights reserved.
 */
 
-"Update Available!" = "!تحديث متوفر";
+"Update Available!" = "!التحديث متاح";
 "An update for Electra is available! Please visit %@ on a computer to download the latest IPA!" = "يوجد تحديث جديد لإلكترا! تفضل بزيارة %@ على الكمبيوتر لتنزيل احدث اصدار!";
 "Version Error" = "خطأ في الإصدار";
 "Error: offsets" = "خطأ: offsets";
@@ -45,7 +45,7 @@
 "The system boot nonce will be set once you enable the jailbreak" = "سيتم تعيين nonce التمهيد النظام بمجرد تمكين الجلبريك";
 "Removing liberiOS" = "Removing liberiOS";
 "Installing Cydia" = "تثبيت السيديا";
-"Restarting" = "جاري إعادة تشغيل";
+"Restarting" = "جاري إعادة التشغيل";
 "APFS Snapshot Created" = "لقطة نظام ملفات أبل تم إنشاؤها";
 "An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future." = "An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future.";
 "Continue Jailbreak" = "توصيل الجلبريك";
