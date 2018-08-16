@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  electra1131
+
+  Created by Pwn20wnd on 6/27/18.
+  Copyright © 2018 Electra Team. All rights reserved.
+*/
+
+"Update Available!" = "Opdatering klar!";
+"An update for Electra is available! Please visit %@ on a computer to download the latest IPA!" = "En opdatering til Electra er klar! Besøg %@ på en computer for at hente den nyeste IPA!";
+"Version Error" = "Version fejl";
+"Error: offsets" = "Fejl: offsets";
+"Enable Jailbreak" = "Aktiver Jailbreak";
+"Already Jailbroken" = "Allerede Jailbroken";
+"Compatible with" = "Kompatibel med";
+"I am using the Electra Jailbreak Toolkit for iOS 11.2 - 11.3.1 by the @%@ to jailbreak my %@ on iOS %@! You can get it now at %@" = "Jeg bruger Electra Jailbreak Toolkit til iOS 11.2 - 11.3.1 lavet af @%@ for at jailbreake min %@ på iOS %@! Få det her %@";
+"Credits" = "Medvirkende";
+"Thanks to Ian Beer, theninjaprawn, stek29, Siguza, xerub, PsychoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot workaround by SparkZheng and bxl1989\nAPFS snapshot persistence patch by Pwn20wnd and ur0\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29" = "Tak til Ian Beer, theninjaprawn, stek29, Siguza, xerub, PyschoTea og Pwn20wnd.\n\nElectra inkluderer følgende software:\n\nAPFS snapshot workaround af SparkZheng og bxl1989\nAPFS snapshot persistence patch af Pwn20wnd og ur0\nliboffsetfinder64 & libimg4tool af tihmstar\nlibplist af libimobiledevice\namfid patch af theninjaprawn\njailbreakd & tweak injection af CoolStar\nunlocknvram & sandbox fixes af stek29"; 
+"OK" = "OK";
+"Share Electra" = "Del Electra";
+"Please Wait (1/3)" = "Vent venligst (1/3)";
+"Waiting: %d seconds" = "Venter: %d seconds";
+"Please Wait (2/3)" = "Vent venligst (2/3)";
+"Error: exploit" = "Fejl: exploit";
+"Error: unsupported" = "Fejl: unsupported";
+"Error Exploiting" = "Fejl i Exploiting";
+"Jailbroken" = "Jailbroken";
+"OpenSSH Running" = "OpenSSH kører";
+"OpenSSH is now running! Enjoy." = "OpenSSH kører nu! God fornøjelse.";
+"Error: tfp0" = "Fejl: tfp0";
+"Already Jailbroken" = "Allerede Jailbroken";
+"Error: amfid patch" = "Fejl: amfid patch";
+"Error: rootfs remount" = "Fejl: rootfs remount";
+"Error: snapshot failed" = "Fejl: snapshot fejlede";
+"Error: conflict" = "Fejl: konflikt";
+"Error Jailbreaking" = "Fejl i Jailbreaking";
+"Set the system boot nonce on jailbreak" = "Sæt system boot nonce på jailbreak";
+"Enter the generator for the nonce you want the system to generate on boot" = "Skriv generatoren for den nonce du vil have, at systemet genererer når det starter op";
+"Cancel" = "Annuller";
+"Set" = "Sæt";
+"Error" = "Fejl";
+"Failed to validate generator" = "Kunne ikke validere generatoren";
+"Notice" = "OBS";
+"The system boot nonce will be set the next time you enable your jailbreak" = "System boot nonce'en vil blive sat næste gang du aktiverer din jailbreak";
+"The system boot nonce will be set once you enable the jailbreak" = "System boot nonce'en vil blive sat når du aktiverer jailbreaken";
+"Removing liberiOS" = "Fjerner liberiOS";
+"Installing Cydia" = "Installerer Cydia";
+"Restarting" = "Genstarter";
+"APFS Snapshot Created" = "APFS Snapshot lavet";
+"An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future." = "Et APFS Snapshot er blevet lavet! Du kan bruge SemiRestore til at nulstille din telefon til dette snapshot i fremtiden.";
+"Continue Jailbreak" = "Fortsæt Jailbreak";
+"APFS Snapshot Not Found" = "APFS Snapshot blev ikke fundet";
+"Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot." = "Advarsel: Din enhed har været bootstrapped med en pre-release version af Electra, og har derfor ikke noget APFS Snapshot. Mens Electra nok vil virke fint, vil du ikke være i stand til at bruge SemiRestore til at nustille hvis du har brug for det. Venligst rens din enhed og gen-bootstrap med denne version af Electra for at lave et snapshot.";
