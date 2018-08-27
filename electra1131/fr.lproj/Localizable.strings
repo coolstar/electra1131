@@ -9,7 +9,7 @@
 "Update Available!" = "Mise à jour Disponible!";
 "An update for Electra is available! Please visit %@ on a computer to download the latest IPA!" = "Une Mise à jour d'Electra est disponible! Rendez-vous sur %@ depuis un ordinateur pour télécharger la dernière version de l'IPA!";
 "Version Error" = "Erreur de version";
-"Error: offsets" = "Erreur: offsets";
+"Error: offsets" = "Erreur de symbole";
 "Enable Jailbreak" = "Activer le Jailbreak";
 "Already Jailbroken" = "Déjà Jailbreaké";
 "Compatible with" = "Compatible";
@@ -29,7 +29,7 @@
 "OpenSSH is now running! Enjoy." = "OpenSSH est maintenant fonctionnel! Profitez bien.";
 "Error: tfp0" = "Erreur: tfp0";
 "Already Jailbroken" = "Déjà Jailbreaké";
-"Error: amfid patch" = "Erreur: amfid patch";
+"Error: amfid patch" = "Erreur: patch amfid";
 "Error: rootfs remount" = "Erreur: rootfs remount";
 "Error: snapshot failed" = "Erreur: snapshot échoué";
 "Error: conflict" = "Erreur: conflits";
