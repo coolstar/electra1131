@@ -135,6 +135,12 @@ double uptime(){
         [_jailbreak setTitle:localize(@"Enable Jailbreak") forState:UIControlStateNormal];
     }
     
+    if (file_exists("/.installed_unc0ver")) {
+        [_jailbreak setTitle:@"unc0ver detected" forState:UIControlStateNormal];
+        [_jailbreak setEnabled:FALSE];
+        [_jailbreak setAlpha:0.5];
+    }
+    
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     
